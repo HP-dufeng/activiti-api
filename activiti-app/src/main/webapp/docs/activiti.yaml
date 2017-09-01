@@ -1,0 +1,3085 @@
+---
+swagger: "2.0"
+info:
+  description: "# activiti \n\n- Activiti is battle-tested Business Process Management.\
+    \ Organizations across the world depend on the open source platform in a huge\
+    \ range of demanding situations. It supports open standards with BPMN and DMN\
+    \ so you can create processes that suit you."
+  version: "v1"
+  title: "Activiti App REST API"
+  contact:
+    name: "Activiti"
+    url: "http://www.activiti.org/userguide/index.html"
+host: "localhost:9999"
+basePath: "/activiti-app/app/rest"
+tags:
+- name: "editor - appDefinition"
+- name: "editor - editorDisplayJsonClient"
+- name: "editor - editorGroups"
+- name: "editor - form"
+- name: "editor - model"
+- name: "editor - stencilSet"
+- name: "idm - account"
+- name: "idm - idmGroups"
+- name: "idm - idmProfile"
+- name: "idm - idmUsers"
+- name: "idm - user"
+- name: "runtime - appDefinition"
+- name: "runtime - comments"
+- name: "runtime - historicTaskQuery"
+- name: "runtime - process"
+- name: "runtime - relatedContent"
+- name: "runtime - runtimeDisplayJsonClient"
+- name: "runtime - task"
+- name: "runtime - workflowUsers"
+schemes:
+- "http"
+- "https"
+paths:
+  /rest/account:
+    get:
+      tags:
+      - "idm - account"
+      summary: "Get the current user"
+      description: ""
+      operationId: "getAccount"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/UserRepresentation"
+      security:
+      - basicAuth: []
+  /rest/admin/groups:
+    get:
+      tags:
+      - "idm - idmGroups"
+      summary: "Get all groups"
+      description: ""
+      operationId: "getGroups"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/GroupRepresentation"
+        403:
+          description: "Forbidden."
+      security:
+      - basicAuth: []
+    post:
+      tags:
+      - "idm - idmGroups"
+      summary: "Create new group"
+      description: ""
+      operationId: "createNewGroup"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/GroupRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/GroupRepresentation"
+        403:
+          description: "Forbidden."
+      security:
+      - basicAuth: []
+  /rest/admin/groups/{groupId}:
+    get:
+      tags:
+      - "idm - idmGroups"
+      summary: "Get a group"
+      description: ""
+      operationId: "getGroup"
+      parameters:
+      - name: "groupId"
+        in: "path"
+        description: "The id of the group."
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/GroupRepresentation"
+        403:
+          description: "Forbidden."
+      security:
+      - basicAuth: []
+    put:
+      tags:
+      - "idm - idmGroups"
+      summary: "Update a group"
+      description: ""
+      operationId: "updateGroup"
+      parameters:
+      - name: "groupId"
+        in: "path"
+        description: "The id of the group."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/GroupRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/GroupRepresentation"
+        403:
+          description: "Forbidden."
+      security:
+      - basicAuth: []
+    delete:
+      tags:
+      - "idm - idmGroups"
+      summary: "Delete a group"
+      description: ""
+      operationId: "deleteGroup"
+      parameters:
+      - name: "groupId"
+        in: "path"
+        description: "The id of the group."
+        required: true
+        type: "string"
+      responses:
+        403:
+          description: "Forbidden."
+      security:
+      - basicAuth: []
+  /rest/admin/groups/{groupId}/members/{userId}:
+    post:
+      tags:
+      - "idm - idmGroups"
+      summary: "Add user to group"
+      description: ""
+      operationId: "addGroupMember"
+      parameters:
+      - name: "groupId"
+        in: "path"
+        description: "The id of the group."
+        required: true
+        type: "string"
+      - name: "userId"
+        in: "path"
+        description: "The id of the user."
+        required: true
+        type: "string"
+      responses:
+        403:
+          description: "Forbidden."
+      security:
+      - basicAuth: []
+    delete:
+      tags:
+      - "idm - idmGroups"
+      summary: "Remove user from group"
+      description: ""
+      operationId: "deleteGroupMember"
+      parameters:
+      - name: "groupId"
+        in: "path"
+        description: "The id of the group."
+        required: true
+        type: "string"
+      - name: "userId"
+        in: "path"
+        description: "The id of the user."
+        required: true
+        type: "string"
+      responses:
+        403:
+          description: "Forbidden."
+      security:
+      - basicAuth: []
+  /rest/admin/groups/{groupId}/users:
+    get:
+      tags:
+      - "idm - idmGroups"
+      summary: "Get users with a group"
+      description: ""
+      operationId: "getGroupUsers"
+      parameters:
+      - name: "groupId"
+        in: "path"
+        description: "The id of the group."
+        required: true
+        type: "string"
+      - name: "filter"
+        in: "query"
+        description: "The filter of user name."
+        required: false
+        type: "string"
+      - name: "page"
+        in: "query"
+        description: "The page number."
+        required: false
+        type: "integer"
+        format: "int32"
+      - name: "pageSize"
+        in: "query"
+        description: "The page size."
+        required: false
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/UserRepresentation"
+        403:
+          description: "Forbidden."
+      security:
+      - basicAuth: []
+  /rest/admin/profile:
+    get:
+      tags:
+      - "idm - idmProfile"
+      summary: "Get a user profile"
+      description: ""
+      operationId: "getProfile"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/UserRepresentation"
+      security:
+      - basicAuth: []
+    post:
+      tags:
+      - "idm - idmProfile"
+      summary: "Update user profile"
+      description: ""
+      operationId: "updateProfile"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/UserRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/UserRepresentation"
+        400:
+          description: "Empty email is not allowed"
+      security:
+      - basicAuth: []
+  /rest/admin/profile-password:
+    post:
+      tags:
+      - "idm - idmProfile"
+      summary: "Change user password"
+      description: ""
+      operationId: "changePassword"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/ChangePasswordRepresentation"
+      responses:
+        404:
+          description: "Indicate the user not found."
+      security:
+      - basicAuth: []
+  /rest/admin/profile-picture:
+    get:
+      tags:
+      - "idm - idmProfile"
+      summary: "Get user profile picture"
+      description: ""
+      operationId: "getProfilePicture"
+      parameters: []
+      responses:
+        500:
+          description: "Could not get profile picture"
+      security:
+      - basicAuth: []
+    post:
+      tags:
+      - "idm - idmProfile"
+      summary: "Update user picture"
+      description: ""
+      operationId: "uploadProfilePicture"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "file"
+        in: "query"
+        required: true
+        type: "ref"
+      responses:
+        200:
+          description: "Indicate the picture upload successed."
+      security:
+      - basicAuth: []
+  /rest/admin/users:
+    get:
+      tags:
+      - "idm - idmUsers"
+      summary: "Get users"
+      description: ""
+      operationId: "getUsers"
+      parameters:
+      - name: "filter"
+        in: "query"
+        description: "The filter of user name."
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        description: "The value contains: idDesc, idAsc, emailAsc, emailDesc."
+        required: false
+        type: "string"
+      - name: "start"
+        in: "query"
+        description: "The start number."
+        required: false
+        type: "integer"
+        format: "int32"
+      - name: "groupId"
+        in: "query"
+        description: "The id of the group."
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/UserRepresentation"
+        403:
+          description: "Forbidden."
+      security:
+      - basicAuth: []
+    post:
+      tags:
+      - "idm - idmUsers"
+      summary: "Create new user"
+      description: ""
+      operationId: "createNewUser"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/CreateUserRepresentation"
+      responses:
+        200:
+          description: "Indicates the user created success."
+          schema:
+            $ref: "#/definitions/User"
+        403:
+          description: "Forbidden."
+      security:
+      - basicAuth: []
+    put:
+      tags:
+      - "idm - idmUsers"
+      summary: "Bulk update users"
+      description: ""
+      operationId: "bulkUpdateUserDetails"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/UpdateUsersRepresentation"
+      responses:
+        200:
+          description: "Indicates the users updated success."
+        403:
+          description: "Forbidden."
+      security:
+      - basicAuth: []
+  /rest/admin/users/{userId}:
+    put:
+      tags:
+      - "idm - idmUsers"
+      summary: "Update user"
+      description: ""
+      operationId: "updateUserDetails"
+      parameters:
+      - name: "userId"
+        in: "path"
+        description: "The id of the user."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/UpdateUsersRepresentation"
+      responses:
+        200:
+          description: "Indicates the user updated success."
+      security:
+      - basicAuth: []
+    delete:
+      tags:
+      - "idm - idmUsers"
+      summary: "Delete user"
+      description: ""
+      operationId: "deleteUser"
+      parameters:
+      - name: "userId"
+        in: "path"
+        description: "The id of the user."
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Indicates the users deleted success."
+        403:
+          description: "Forbidden."
+      security:
+      - basicAuth: []
+  /rest/app-definitions/import:
+    post:
+      tags:
+      - "editor - appDefinition"
+      summary: "Import app definitions"
+      description: ""
+      operationId: "importAppDefinition"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "file"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/AppDefinitionRepresentation"
+      security:
+      - basicAuth: []
+  /rest/app-definitions/text/import:
+    post:
+      tags:
+      - "editor - appDefinition"
+      summary: "Import app definitions"
+      description: ""
+      operationId: "importAppDefinitionText"
+      parameters:
+      - name: "file"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "string"
+      security:
+      - basicAuth: []
+  /rest/app-definitions/{modelId}:
+    get:
+      tags:
+      - "editor - appDefinition"
+      summary: "Get app definitions"
+      description: ""
+      operationId: "getAppDefinition"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/AppDefinitionRepresentation"
+      security:
+      - basicAuth: []
+    put:
+      tags:
+      - "editor - appDefinition"
+      summary: "Update app definitions"
+      description: ""
+      operationId: "updateAppDefinition"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/AppDefinitionSaveRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/AppDefinitionUpdateResultRepresentation"
+      security:
+      - basicAuth: []
+  /rest/app-definitions/{modelId}/export:
+    get:
+      tags:
+      - "editor - appDefinition"
+      summary: "Export app definitions"
+      description: ""
+      operationId: "exportAppDefinition"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        default:
+          description: "successful operation"
+      security:
+      - basicAuth: []
+  /rest/app-definitions/{modelId}/history/{modelHistoryId}:
+    get:
+      tags:
+      - "editor - appDefinition"
+      summary: "Get app definition history"
+      description: ""
+      operationId: "getAppDefinitionHistory"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "modelHistoryId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/AppDefinitionRepresentation"
+      security:
+      - basicAuth: []
+  /rest/app-definitions/{modelId}/import:
+    post:
+      tags:
+      - "editor - appDefinition"
+      summary: "Import app definitions new version"
+      description: ""
+      operationId: "importAppDefinition"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "file"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/AppDefinitionRepresentation"
+      security:
+      - basicAuth: []
+  /rest/app-definitions/{modelId}/publish:
+    post:
+      tags:
+      - "editor - appDefinition"
+      summary: "Publish app definitions"
+      description: ""
+      operationId: "publishAppDefinition"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/AppDefinitionPublishRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/AppDefinitionUpdateResultRepresentation"
+      security:
+      - basicAuth: []
+  /rest/app-definitions/{modelId}/text/import:
+    post:
+      tags:
+      - "editor - appDefinition"
+      summary: "Import app definitions new version"
+      description: ""
+      operationId: "importAppDefinitionText"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "file"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "string"
+      security:
+      - basicAuth: []
+  /rest/authenticate:
+    get:
+      tags:
+      - "idm - account"
+      summary: "Check if the user is authenticated"
+      description: ""
+      operationId: "isAuthenticated"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Indicates the user is authenticated, and return its full name"
+          schema:
+            $ref: "#/definitions/ObjectNode"
+        401:
+          description: "Indicates the requested did not contain valid authorization."
+      security:
+      - basicAuth: []
+  /rest/content:
+    post:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Create temporary related content"
+      description: ""
+      operationId: "createTemporaryRelatedContent"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/RelatedContentRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/RelatedContentRepresentation"
+      security:
+      - basicAuth: []
+  /rest/content/raw:
+    post:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Create temporary raw related content"
+      description: ""
+      operationId: "createTemporaryRawRelatedContent"
+      parameters:
+      - name: "file"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/RelatedContentRepresentation"
+      security:
+      - basicAuth: []
+  /rest/content/raw/text:
+    post:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Create temporary raw related content text"
+      description: ""
+      operationId: "createTemporaryRawRelatedContentText"
+      parameters:
+      - name: "file"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/RelatedContentRepresentation"
+      security:
+      - basicAuth: []
+  /rest/content/{contentId}:
+    get:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Get content"
+      description: ""
+      operationId: "getContent"
+      parameters:
+      - name: "contentId"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/RelatedContentRepresentation"
+      security:
+      - basicAuth: []
+    delete:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Delete content"
+      description: ""
+      operationId: "deleteContent"
+      parameters:
+      - name: "contentId"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        default:
+          description: "successful operation"
+      security:
+      - basicAuth: []
+  /rest/content/{contentId}/raw:
+    get:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Get raw content"
+      description: ""
+      operationId: "getRawContent"
+      parameters:
+      - name: "contentId"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        default:
+          description: "successful operation"
+      security:
+      - basicAuth: []
+  /rest/content/{source}/{sourceId}/process-instances:
+    get:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Get related process instance for content"
+      description: ""
+      operationId: "getRelatedProcessInstancesForContent"
+      parameters:
+      - name: "source"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "sourceId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/RelatedContentRepresentation"
+      security:
+      - basicAuth: []
+  /rest/editor-groups:
+    get:
+      tags:
+      - "editor - editorGroups"
+      summary: "Get groups"
+      description: ""
+      operationId: "getGroups"
+      parameters:
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Group"
+      security:
+      - basicAuth: []
+  /rest/form-models:
+    get:
+      tags:
+      - "editor - form"
+      summary: "Query form definitions"
+      description: ""
+      operationId: "getForms"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/FormRepresentation"
+      security:
+      - basicAuth: []
+  /rest/form-models/values:
+    get:
+      tags:
+      - "editor - form"
+      summary: "Get forms definitions"
+      description: ""
+      operationId: "getForms"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/FormRepresentation"
+      security:
+      - basicAuth: []
+  /rest/form-models/{formId}:
+    get:
+      tags:
+      - "editor - form"
+      summary: "Get a form definitions"
+      description: ""
+      operationId: "getForm"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "formId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/FormRepresentation"
+      security:
+      - basicAuth: []
+    put:
+      tags:
+      - "editor - form"
+      summary: "Save a form definitions"
+      description: ""
+      operationId: "saveForm"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "formId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/FormSaveRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/FormRepresentation"
+      security:
+      - basicAuth: []
+  /rest/form-models/{formId}/history/{formHistoryId}:
+    get:
+      tags:
+      - "editor - form"
+      summary: "Get a form definitions history"
+      description: ""
+      operationId: "getFormHistory"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "formId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "formHistoryId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/FormRepresentation"
+      security:
+      - basicAuth: []
+  /rest/import-process-model:
+    post:
+      tags:
+      - "editor - model"
+      summary: "Import process model"
+      description: ""
+      operationId: "importProcessModel"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "file"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ModelRepresentation"
+      security:
+      - basicAuth: []
+  /rest/import-process-model/text:
+    post:
+      tags:
+      - "editor - model"
+      summary: "Import process model text"
+      description: ""
+      operationId: "importProcessModelText"
+      parameters:
+      - name: "file"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "string"
+      security:
+      - basicAuth: []
+  /rest/models:
+    get:
+      tags:
+      - "editor - model"
+      summary: "Query models"
+      description: ""
+      operationId: "getModels"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "sort"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "modelType"
+        in: "query"
+        required: false
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/ModelRepresentation"
+      security:
+      - basicAuth: []
+    post:
+      tags:
+      - "editor - model"
+      summary: "Create model"
+      description: ""
+      operationId: "createModel"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/ModelRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ModelRepresentation"
+      security:
+      - basicAuth: []
+  /rest/models-for-app-definition:
+    get:
+      tags:
+      - "editor - model"
+      summary: "Get models to include in app definition"
+      description: ""
+      operationId: "getModelsToIncludeInAppDefinition"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/ModelRepresentation"
+      security:
+      - basicAuth: []
+  /rest/models/{modelId}:
+    get:
+      tags:
+      - "editor - model"
+      summary: "Get model"
+      description: ""
+      operationId: "getModel"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ModelRepresentation"
+      security:
+      - basicAuth: []
+    put:
+      tags:
+      - "editor - model"
+      summary: "Update model"
+      description: ""
+      operationId: "updateModel"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/ModelRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ModelRepresentation"
+        400:
+          description: "Model with provided key already exists."
+      security:
+      - basicAuth: []
+    delete:
+      tags:
+      - "editor - model"
+      summary: "Delete model"
+      description: ""
+      operationId: "deleteModel"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "cascade"
+        in: "query"
+        required: false
+        type: "boolean"
+      - name: "deleteRuntimeApp"
+        in: "query"
+        required: false
+        type: "boolean"
+      responses:
+        200:
+          description: ""
+      security:
+      - basicAuth: []
+  /rest/models/{modelId}/clone:
+    post:
+      tags:
+      - "editor - model"
+      summary: "Duplicate model"
+      description: ""
+      operationId: "duplicateModel"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/ModelRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ModelRepresentation"
+      security:
+      - basicAuth: []
+  /rest/models/{modelId}/editor/json:
+    get:
+      tags:
+      - "editor - model"
+      summary: "Get the JSON model"
+      description: ""
+      operationId: "getModelJSON"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ObjectNode"
+      security:
+      - basicAuth: []
+    post:
+      tags:
+      - "editor - model"
+      summary: "Save the JSON model"
+      description: ""
+      operationId: "saveModel"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          type: "object"
+          additionalProperties:
+            type: "array"
+            items:
+              type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ModelRepresentation"
+        400:
+          description: "Invalid lastUpdated date."
+      security:
+      - basicAuth: []
+  /rest/models/{modelId}/history:
+    get:
+      tags:
+      - "editor - model"
+      summary: "Get model history collection"
+      description: ""
+      operationId: "getModelHistoryCollection"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "includeLatestVersion"
+        in: "query"
+        required: false
+        type: "boolean"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/ModelRepresentation"
+      security:
+      - basicAuth: []
+  /rest/models/{modelId}/history/{modelHistoryId}:
+    get:
+      tags:
+      - "editor - model"
+      summary: "Get process model history collection"
+      description: ""
+      operationId: "getProcessModelHistory"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "modelHistoryId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ModelRepresentation"
+      security:
+      - basicAuth: []
+    post:
+      tags:
+      - "editor - model"
+      summary: "Execute process model history action"
+      description: ""
+      operationId: "executeProcessModelHistoryAction"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "modelHistoryId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/BaseRestActionRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ReviveModelResultRepresentation"
+      security:
+      - basicAuth: []
+  /rest/models/{modelId}/newversion:
+    post:
+      tags:
+      - "editor - model"
+      summary: "Create a new model version"
+      description: ""
+      operationId: "importNewVersion"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "file"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ModelRepresentation"
+      security:
+      - basicAuth: []
+  /rest/models/{modelId}/parent-relations:
+    get:
+      tags:
+      - "editor - model"
+      summary: "Get model relations"
+      description: ""
+      operationId: "getModelRelations"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/ModelInformation"
+      security:
+      - basicAuth: []
+  /rest/models/{modelId}/thumbnail:
+    get:
+      tags:
+      - "editor - model"
+      summary: "Get model thumbnail"
+      description: ""
+      operationId: "getModelThumbnail"
+      produces:
+      - "image/png"
+      parameters:
+      - name: "modelId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              type: "string"
+              format: "byte"
+      security:
+      - basicAuth: []
+  /rest/models/{processModelId}/bpmn20:
+    get:
+      tags:
+      - "editor - model"
+      summary: "Get BPMN 2.0 xml"
+      description: ""
+      operationId: "getProcessModelBpmn20Xml"
+      parameters:
+      - name: "processModelId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        default:
+          description: "successful operation"
+      security:
+      - basicAuth: []
+  /rest/models/{processModelId}/history/{processModelHistoryId}/bpmn20:
+    get:
+      tags:
+      - "editor - model"
+      summary: "Get BPMN 2.0 xml for process definition history"
+      description: ""
+      operationId: "getHistoricProcessModelBpmn20Xml"
+      parameters:
+      - name: "processModelId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "processModelHistoryId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        default:
+          description: "successful operation"
+      security:
+      - basicAuth: []
+  /rest/models/{processModelId}/history/{processModelHistoryId}/model-json:
+    get:
+      tags:
+      - "editor - editorDisplayJsonClient"
+      summary: "Get process model history json definitions"
+      description: ""
+      operationId: "getModelHistoryJSON"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "processModelId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "processModelHistoryId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/JsonNode"
+      security:
+      - basicAuth: []
+  /rest/models/{processModelId}/model-json:
+    get:
+      tags:
+      - "editor - editorDisplayJsonClient"
+      summary: "Get process model json definitions"
+      description: ""
+      operationId: "getModelJSON"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "processModelId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/JsonNode"
+      security:
+      - basicAuth: []
+  /rest/process-definitions:
+    get:
+      tags:
+      - "runtime - process"
+      summary: "Get process definition"
+      description: ""
+      operationId: "getProcessDefinitions"
+      parameters:
+      - name: "latest"
+        in: "query"
+        required: false
+        type: "boolean"
+      - name: "deploymentKey"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/ProcessDefinitionRepresentation"
+      security:
+      - basicAuth: []
+  /rest/process-definitions/{processDefinitionId}/model-json:
+    get:
+      tags:
+      - "runtime - runtimeDisplayJsonClient"
+      summary: "Get model json for process definition"
+      description: ""
+      operationId: "getModelJSONForProcessDefinition"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "processDefinitionId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/JsonNode"
+      security:
+      - basicAuth: []
+  /rest/process-definitions/{processDefinitionId}/start-form:
+    get:
+      tags:
+      - "runtime - process"
+      summary: "Get process definition start form"
+      description: ""
+      operationId: "getProcessDefinitionStartForm"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/FormDefinition"
+      security:
+      - basicAuth: []
+  /rest/process-instances:
+    post:
+      tags:
+      - "runtime - process"
+      summary: "Start new process instances"
+      description: ""
+      operationId: "startNewProcessInstance"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/CreateProcessInstanceRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ProcessInstanceRepresentation"
+      security:
+      - basicAuth: []
+  /rest/process-instances/history/{processInstanceId}/model-json:
+    get:
+      tags:
+      - "runtime - runtimeDisplayJsonClient"
+      summary: "Get model history json "
+      description: ""
+      operationId: "getModelHistoryJSON"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "processInstanceId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/JsonNode"
+      security:
+      - basicAuth: []
+  /rest/process-instances/{processInstanceId}:
+    get:
+      tags:
+      - "runtime - process"
+      summary: "Get process instance"
+      description: ""
+      operationId: "getProcessInstance"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "processInstanceId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ProcessInstanceRepresentation"
+      security:
+      - basicAuth: []
+    delete:
+      tags:
+      - "runtime - process"
+      summary: "Delete process instance"
+      description: ""
+      operationId: "deleteProcessInstance"
+      parameters:
+      - name: "processInstanceId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: ""
+      security:
+      - basicAuth: []
+  /rest/process-instances/{processInstanceId}/comments:
+    get:
+      tags:
+      - "runtime - comments"
+      summary: "Get process instance comments"
+      description: ""
+      operationId: "getProcessInstanceComments"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "processInstanceId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "latestFirst"
+        in: "query"
+        required: false
+        type: "boolean"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CommentRepresentation"
+      security:
+      - basicAuth: []
+    post:
+      tags:
+      - "runtime - comments"
+      summary: "Add process instance comment"
+      description: ""
+      operationId: "addProcessInstanceComment"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/CommentRepresentation"
+      - name: "processInstanceId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/CommentRepresentation"
+      security:
+      - basicAuth: []
+  /rest/process-instances/{processInstanceId}/content:
+    get:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Get related content for process instance"
+      description: ""
+      operationId: "getRelatedContentForProcessInstance"
+      parameters:
+      - name: "processInstanceId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/RelatedContentRepresentation"
+      security:
+      - basicAuth: []
+  /rest/process-instances/{processInstanceId}/model-json:
+    get:
+      tags:
+      - "runtime - runtimeDisplayJsonClient"
+      summary: "Get model json"
+      description: ""
+      operationId: "getModelJSON"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "processInstanceId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/JsonNode"
+      security:
+      - basicAuth: []
+  /rest/process-instances/{processInstanceId}/raw-content:
+    post:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Create related content on process instance"
+      description: ""
+      operationId: "createRelatedContentOnProcessInstance"
+      parameters:
+      - name: "processInstanceId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "file"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/RelatedContentRepresentation"
+      security:
+      - basicAuth: []
+  /rest/process-instances/{processInstanceId}/raw-content/text:
+    post:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Create related content on process instance text"
+      description: ""
+      operationId: "createRelatedContentOnProcessInstanceText"
+      parameters:
+      - name: "processInstanceId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "file"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/RelatedContentRepresentation"
+      security:
+      - basicAuth: []
+  /rest/process-instances/{processInstanceId}/start-form:
+    get:
+      tags:
+      - "runtime - process"
+      summary: "Get process instance start form"
+      description: ""
+      operationId: "getProcessInstanceStartForm"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "processInstanceId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/FormDefinition"
+      security:
+      - basicAuth: []
+  /rest/processes/{processInstanceId}/content:
+    post:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Create related content on process instance"
+      description: ""
+      operationId: "createRelatedContentOnProcessInstance"
+      parameters:
+      - name: "processInstanceId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/RelatedContentRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/RelatedContentRepresentation"
+      security:
+      - basicAuth: []
+  /rest/query/history/tasks:
+    post:
+      tags:
+      - "runtime - historicTaskQuery"
+      summary: "List tasks"
+      description: ""
+      operationId: "listTasks"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/ObjectNode"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/TaskRepresentation"
+      security:
+      - basicAuth: []
+  /rest/query/process-instances:
+    post:
+      tags:
+      - "runtime - process"
+      summary: "Query process instances"
+      description: ""
+      operationId: "getProcessInstances"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/ObjectNode"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/ProcessInstanceRepresentation"
+      security:
+      - basicAuth: []
+  /rest/query/tasks:
+    post:
+      tags:
+      - "runtime - task"
+      summary: "List tasks"
+      description: ""
+      operationId: "listTasks"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/ObjectNode"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/TaskRepresentation"
+      security:
+      - basicAuth: []
+  /rest/runtime/app-definitions:
+    get:
+      tags:
+      - "runtime - appDefinition"
+      summary: "Get app definition list"
+      description: ""
+      operationId: "getAppDefinitions"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/AppDefinitionRepresentation"
+      security:
+      - basicAuth: []
+  /rest/runtime/app-definitions/{deploymentKey}:
+    get:
+      tags:
+      - "runtime - appDefinition"
+      summary: "Get app definition"
+      description: ""
+      operationId: "getAppDefinition"
+      parameters:
+      - name: "deploymentKey"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/AppDefinitionRepresentation"
+      security:
+      - basicAuth: []
+  /rest/stencil-sets/editor:
+    get:
+      tags:
+      - "editor - stencilSet"
+      summary: "Get bpmn node json stencil definitions"
+      description: ""
+      operationId: "getStencilSetForEditor"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/JsonNode"
+      security:
+      - basicAuth: []
+  /rest/task-forms/{taskId}:
+    get:
+      tags:
+      - "runtime - task"
+      summary: "Get task from"
+      description: ""
+      operationId: "getTaskForm"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/FormDefinition"
+      security:
+      - basicAuth: []
+    post:
+      tags:
+      - "runtime - task"
+      summary: "Complete task from"
+      description: ""
+      operationId: "completeTaskForm"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/CompleteFormRepresentation"
+      responses:
+        200:
+          description: ""
+      security:
+      - basicAuth: []
+  /rest/task-forms/{taskId}/variables:
+    get:
+      tags:
+      - "runtime - task"
+      summary: "Get process instance variable"
+      description: ""
+      operationId: "getProcessInstanceVariables"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/ProcessInstanceVariableRepresentation"
+      security:
+      - basicAuth: []
+  /rest/tasks:
+    post:
+      tags:
+      - "runtime - task"
+      summary: "Create new task"
+      description: ""
+      operationId: "createNewTask"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/CreateTaskRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/TaskRepresentation"
+        400:
+          description: "Task name is required."
+      security:
+      - basicAuth: []
+  /rest/tasks/{taskId}:
+    get:
+      tags:
+      - "runtime - task"
+      summary: "Get task"
+      description: ""
+      operationId: "getTask"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/TaskRepresentation"
+      security:
+      - basicAuth: []
+    put:
+      tags:
+      - "runtime - task"
+      summary: "Update task"
+      description: ""
+      operationId: "updateTask"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/TaskUpdateRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/TaskRepresentation"
+      security:
+      - basicAuth: []
+  /rest/tasks/{taskId}/action/assign:
+    put:
+      tags:
+      - "runtime - task"
+      summary: "Assign task"
+      description: ""
+      operationId: "assignTask"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/ObjectNode"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/TaskRepresentation"
+      security:
+      - basicAuth: []
+  /rest/tasks/{taskId}/action/claim:
+    put:
+      tags:
+      - "runtime - task"
+      summary: "Claim task"
+      description: ""
+      operationId: "claimTask"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: ""
+      security:
+      - basicAuth: []
+  /rest/tasks/{taskId}/action/complete:
+    put:
+      tags:
+      - "runtime - task"
+      summary: "Complete task"
+      description: ""
+      operationId: "completeTask"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: ""
+      security:
+      - basicAuth: []
+  /rest/tasks/{taskId}/action/involve:
+    put:
+      tags:
+      - "runtime - task"
+      summary: "Involve user"
+      description: ""
+      operationId: "involveUser"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/ObjectNode"
+      responses:
+        200:
+          description: ""
+      security:
+      - basicAuth: []
+  /rest/tasks/{taskId}/action/remove-involved:
+    put:
+      tags:
+      - "runtime - task"
+      summary: "Remove involved user"
+      description: ""
+      operationId: "removeInvolvedUser"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/ObjectNode"
+      responses:
+        200:
+          description: ""
+      security:
+      - basicAuth: []
+  /rest/tasks/{taskId}/comments:
+    get:
+      tags:
+      - "runtime - comments"
+      summary: "Get task comments"
+      description: ""
+      operationId: "getTaskComments"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "latestFirst"
+        in: "query"
+        required: false
+        type: "boolean"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CommentRepresentation"
+      security:
+      - basicAuth: []
+    post:
+      tags:
+      - "runtime - comments"
+      summary: "Add task comment"
+      description: ""
+      operationId: "addTaskComment"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/CommentRepresentation"
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/CommentRepresentation"
+      security:
+      - basicAuth: []
+  /rest/tasks/{taskId}/content:
+    get:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Get related content for task"
+      description: ""
+      operationId: "getRelatedContentForTask"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/RelatedContentRepresentation"
+      security:
+      - basicAuth: []
+    post:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Create related content on task"
+      description: ""
+      operationId: "createRelatedContentOnTask"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/RelatedContentRepresentation"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/RelatedContentRepresentation"
+      security:
+      - basicAuth: []
+  /rest/tasks/{taskId}/raw-content:
+    post:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Create related content on task"
+      description: ""
+      operationId: "createRelatedContentOnTask"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "file"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/RelatedContentRepresentation"
+      security:
+      - basicAuth: []
+  /rest/tasks/{taskId}/raw-content/text:
+    post:
+      tags:
+      - "runtime - relatedContent"
+      summary: "Create related content on task text"
+      description: ""
+      operationId: "createRelatedContentOnTaskText"
+      parameters:
+      - name: "taskId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "file"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/RelatedContentRepresentation"
+      security:
+      - basicAuth: []
+  /rest/users/{userId}:
+    get:
+      tags:
+      - "idm - user"
+      summary: "Get a single user"
+      description: ""
+      operationId: "getUser"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "userId"
+        in: "path"
+        description: "The id of the user."
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Indicates the user exists and is returned."
+          schema:
+            $ref: "#/definitions/UserRepresentation"
+        404:
+          description: "Indicates the requested user does not exist."
+      security:
+      - basicAuth: []
+  /rest/workflow-users:
+    get:
+      tags:
+      - "runtime - workflowUsers"
+      summary: "Get users"
+      description: ""
+      operationId: "getUsers"
+      parameters:
+      - name: "filter"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "email"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "externalId"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "excludeTaskId"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "excludeProcessId"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "groupId"
+        in: "query"
+        required: false
+        type: "integer"
+        format: "int64"
+      - name: "tenantId"
+        in: "query"
+        required: false
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/UserRepresentation"
+      security:
+      - basicAuth: []
+securityDefinitions:
+  basicAuth:
+    type: "basic"
+definitions:
+  AppDefinition:
+    type: "object"
+    properties:
+      models:
+        type: "array"
+        items:
+          $ref: "#/definitions/AppModelDefinition"
+      theme:
+        type: "string"
+      icon:
+        type: "string"
+  AppDefinitionPublishRepresentation:
+    type: "object"
+    properties:
+      comment:
+        type: "string"
+      force:
+        type: "boolean"
+  AppDefinitionRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      key:
+        type: "string"
+      description:
+        type: "string"
+      version:
+        type: "integer"
+        format: "int32"
+      created:
+        type: "string"
+        format: "date-time"
+      definition:
+        $ref: "#/definitions/AppDefinition"
+  AppDefinitionSaveRepresentation:
+    type: "object"
+    properties:
+      appDefinition:
+        $ref: "#/definitions/AppDefinitionRepresentation"
+      publish:
+        type: "boolean"
+      force:
+        type: "boolean"
+  AppDefinitionUpdateResultRepresentation:
+    type: "object"
+    properties:
+      appDefinition:
+        $ref: "#/definitions/AppDefinitionRepresentation"
+      message:
+        type: "string"
+      messageKey:
+        type: "string"
+      error:
+        type: "boolean"
+      errorType:
+        type: "integer"
+        format: "int32"
+      errorDescription:
+        type: "string"
+  AppModelDefinition:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      version:
+        type: "integer"
+        format: "int32"
+      modelType:
+        type: "integer"
+        format: "int32"
+      description:
+        type: "string"
+      stencilSetId:
+        type: "integer"
+        format: "int64"
+      createdBy:
+        type: "string"
+      lastUpdatedBy:
+        type: "string"
+      lastUpdated:
+        type: "string"
+        format: "date-time"
+  BaseRestActionRepresentation:
+    type: "object"
+    properties:
+      action:
+        type: "string"
+      comment:
+        type: "string"
+  ChangePasswordRepresentation:
+    type: "object"
+    properties:
+      originalPassword:
+        type: "string"
+      newPassword:
+        type: "string"
+  CommentRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      message:
+        type: "string"
+      created:
+        type: "string"
+        format: "date-time"
+      createdBy:
+        type: "string"
+  CompleteFormRepresentation:
+    type: "object"
+    properties:
+      formId:
+        type: "string"
+      values:
+        type: "object"
+        additionalProperties:
+          type: "object"
+      outcome:
+        type: "string"
+  CreateProcessInstanceRepresentation:
+    type: "object"
+    properties:
+      formId:
+        type: "string"
+      values:
+        type: "object"
+        additionalProperties:
+          type: "object"
+      outcome:
+        type: "string"
+      processDefinitionId:
+        type: "string"
+      name:
+        type: "string"
+  CreateTaskRepresentation:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      description:
+        type: "string"
+      category:
+        type: "string"
+  CreateUserRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      email:
+        type: "string"
+      fullName:
+        type: "string"
+      groups:
+        type: "array"
+        items:
+          $ref: "#/definitions/GroupRepresentation"
+      password:
+        type: "string"
+  ExpressionFormField:
+    allOf:
+    - $ref: "#/definitions/FormField"
+    - type: "object"
+      properties:
+        expression:
+          type: "string"
+  FormContainer:
+    allOf:
+    - $ref: "#/definitions/FormField"
+    - type: "object"
+      properties:
+        fields:
+          type: "array"
+          items:
+            type: "array"
+            items:
+              $ref: "#/definitions/FormField"
+  FormDefinition:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      description:
+        type: "string"
+      key:
+        type: "string"
+      version:
+        type: "integer"
+        format: "int32"
+      fields:
+        type: "array"
+        items:
+          $ref: "#/definitions/FormField"
+      outcomes:
+        type: "array"
+        items:
+          $ref: "#/definitions/FormOutcome"
+      outcomeVariableName:
+        type: "string"
+  FormField:
+    type: "object"
+    discriminator: "fieldType"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      type:
+        type: "string"
+      value:
+        type: "object"
+      required:
+        type: "boolean"
+      readOnly:
+        type: "boolean"
+      overrideId:
+        type: "boolean"
+      placeholder:
+        type: "string"
+      params:
+        type: "object"
+        additionalProperties:
+          type: "object"
+      layout:
+        $ref: "#/definitions/LayoutDefinition"
+      sizeX:
+        type: "integer"
+        format: "int32"
+      sizeY:
+        type: "integer"
+        format: "int32"
+  FormOutcome:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+  FormRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      key:
+        type: "string"
+      description:
+        type: "string"
+      version:
+        type: "integer"
+        format: "int32"
+      lastUpdatedBy:
+        type: "string"
+      lastUpdated:
+        type: "string"
+        format: "date-time"
+      formDefinition:
+        $ref: "#/definitions/FormDefinition"
+  FormSaveRepresentation:
+    type: "object"
+    properties:
+      reusable:
+        type: "boolean"
+      newVersion:
+        type: "boolean"
+      comment:
+        type: "string"
+      formImageBase64:
+        type: "string"
+      formRepresentation:
+        $ref: "#/definitions/FormRepresentation"
+  Group:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      id:
+        type: "string"
+      type:
+        type: "string"
+  GroupRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      type:
+        type: "string"
+  JsonNode:
+    type: "object"
+    properties:
+      array:
+        type: "boolean"
+      null:
+        type: "boolean"
+      float:
+        type: "boolean"
+      number:
+        type: "boolean"
+      nodeType:
+        type: "string"
+        enum:
+        - "ARRAY"
+        - "BINARY"
+        - "BOOLEAN"
+        - "MISSING"
+        - "NULL"
+        - "NUMBER"
+        - "OBJECT"
+        - "POJO"
+        - "STRING"
+      object:
+        type: "boolean"
+      binary:
+        type: "boolean"
+      bigDecimal:
+        type: "boolean"
+      integralNumber:
+        type: "boolean"
+      pojo:
+        type: "boolean"
+      double:
+        type: "boolean"
+      long:
+        type: "boolean"
+      bigInteger:
+        type: "boolean"
+      missingNode:
+        type: "boolean"
+      containerNode:
+        type: "boolean"
+      int:
+        type: "boolean"
+      textual:
+        type: "boolean"
+      valueNode:
+        type: "boolean"
+      short:
+        type: "boolean"
+      boolean:
+        type: "boolean"
+      floatingPointNumber:
+        type: "boolean"
+  LayoutDefinition:
+    type: "object"
+    properties:
+      row:
+        type: "integer"
+        format: "int32"
+  ModelInformation:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+      type:
+        type: "integer"
+        format: "int32"
+  ModelRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      key:
+        type: "string"
+      description:
+        type: "string"
+      createdBy:
+        type: "string"
+      lastUpdatedBy:
+        type: "string"
+      lastUpdated:
+        type: "string"
+        format: "date-time"
+      latestVersion:
+        type: "boolean"
+      version:
+        type: "integer"
+        format: "int32"
+      comment:
+        type: "string"
+      modelType:
+        type: "integer"
+        format: "int32"
+  ObjectNode:
+    type: "object"
+    properties:
+      nodeType:
+        type: "string"
+        enum:
+        - "ARRAY"
+        - "BINARY"
+        - "BOOLEAN"
+        - "MISSING"
+        - "NULL"
+        - "NUMBER"
+        - "OBJECT"
+        - "POJO"
+        - "STRING"
+      array:
+        type: "boolean"
+      null:
+        type: "boolean"
+      float:
+        type: "boolean"
+      number:
+        type: "boolean"
+      object:
+        type: "boolean"
+      binary:
+        type: "boolean"
+      bigDecimal:
+        type: "boolean"
+      integralNumber:
+        type: "boolean"
+      pojo:
+        type: "boolean"
+      double:
+        type: "boolean"
+      long:
+        type: "boolean"
+      bigInteger:
+        type: "boolean"
+      missingNode:
+        type: "boolean"
+      containerNode:
+        type: "boolean"
+      int:
+        type: "boolean"
+      textual:
+        type: "boolean"
+      valueNode:
+        type: "boolean"
+      short:
+        type: "boolean"
+      boolean:
+        type: "boolean"
+      floatingPointNumber:
+        type: "boolean"
+  Option:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+  OptionFormField:
+    allOf:
+    - $ref: "#/definitions/FormField"
+    - type: "object"
+      properties:
+        optionType:
+          type: "string"
+        hasEmptyValue:
+          type: "boolean"
+        options:
+          type: "array"
+          items:
+            $ref: "#/definitions/Option"
+  ProcessDefinitionRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      description:
+        type: "string"
+      key:
+        type: "string"
+      category:
+        type: "string"
+      version:
+        type: "integer"
+        format: "int32"
+      deploymentId:
+        type: "string"
+      tenantId:
+        type: "string"
+      hasStartForm:
+        type: "boolean"
+  ProcessInstanceRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      businessKey:
+        type: "string"
+      processDefinitionId:
+        type: "string"
+      tenantId:
+        type: "string"
+      started:
+        type: "string"
+        format: "date-time"
+      ended:
+        type: "string"
+        format: "date-time"
+      startedBy:
+        $ref: "#/definitions/UserRepresentation"
+      processDefinitionName:
+        type: "string"
+      processDefinitionDescription:
+        type: "string"
+      processDefinitionKey:
+        type: "string"
+      processDefinitionCategory:
+        type: "string"
+      processDefinitionVersion:
+        type: "integer"
+        format: "int32"
+      processDefinitionDeploymentId:
+        type: "string"
+      graphicalNotationDefined:
+        type: "boolean"
+      startFormDefined:
+        type: "boolean"
+      variables:
+        type: "array"
+        items:
+          $ref: "#/definitions/RestVariable"
+  ProcessInstanceVariableRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      type:
+        type: "string"
+      value:
+        type: "object"
+  RelatedContentRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+      created:
+        type: "string"
+        format: "date-time"
+      createdBy:
+        type: "string"
+      contentAvailable:
+        type: "boolean"
+      link:
+        type: "boolean"
+      source:
+        type: "string"
+      sourceId:
+        type: "string"
+      mimeType:
+        type: "string"
+      simpleType:
+        type: "string"
+      linkUrl:
+        type: "string"
+      previewStatus:
+        type: "string"
+      thumbnailStatus:
+        type: "string"
+  RestVariable:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      type:
+        type: "string"
+      value:
+        type: "object"
+      valueUrl:
+        type: "string"
+      scope:
+        type: "string"
+  ReviveModelResultRepresentation:
+    type: "object"
+    properties:
+      unresolvedModels:
+        type: "array"
+        items:
+          $ref: "#/definitions/UnresolveModelRepresentation"
+  TaskRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      description:
+        type: "string"
+      category:
+        type: "string"
+      assignee:
+        $ref: "#/definitions/UserRepresentation"
+      created:
+        type: "string"
+        format: "date-time"
+      dueDate:
+        type: "string"
+        format: "date-time"
+      endDate:
+        type: "string"
+        format: "date-time"
+      duration:
+        type: "integer"
+        format: "int64"
+      priority:
+        type: "integer"
+        format: "int32"
+      processInstanceId:
+        type: "string"
+      processInstanceName:
+        type: "string"
+      processDefinitionId:
+        type: "string"
+      processDefinitionName:
+        type: "string"
+      processDefinitionDescription:
+        type: "string"
+      processDefinitionKey:
+        type: "string"
+      processDefinitionCategory:
+        type: "string"
+      processDefinitionVersion:
+        type: "integer"
+        format: "int32"
+      processDefinitionDeploymentId:
+        type: "string"
+      formKey:
+        type: "string"
+      processInstanceStartUserId:
+        type: "string"
+      initiatorCanCompleteTask:
+        type: "boolean"
+      involvedPeople:
+        type: "array"
+        items:
+          $ref: "#/definitions/UserRepresentation"
+      memberOfCandidateUsers:
+        type: "boolean"
+      memberOfCandidateGroup:
+        type: "boolean"
+  TaskUpdateRepresentation:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      description:
+        type: "string"
+      dueDate:
+        type: "string"
+        format: "date-time"
+      nameSet:
+        type: "boolean"
+      descriptionSet:
+        type: "boolean"
+      dueDateSet:
+        type: "boolean"
+  UnresolveModelRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      createdBy:
+        type: "string"
+  UpdateUsersRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      email:
+        type: "string"
+      password:
+        type: "string"
+      users:
+        type: "array"
+        items:
+          type: "string"
+  User:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      password:
+        type: "string"
+      email:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      pictureSet:
+        type: "boolean"
+  UserRepresentation:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      email:
+        type: "string"
+      fullName:
+        type: "string"
+      groups:
+        type: "array"
+        items:
+          $ref: "#/definitions/GroupRepresentation"

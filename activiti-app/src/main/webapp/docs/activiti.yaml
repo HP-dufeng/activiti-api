@@ -2658,8 +2658,6 @@ definitions:
         type: "boolean"
       float:
         type: "boolean"
-      number:
-        type: "boolean"
       nodeType:
         type: "string"
         enum:
@@ -2672,37 +2670,39 @@ definitions:
         - "OBJECT"
         - "POJO"
         - "STRING"
-      object:
+      number:
         type: "boolean"
-      binary:
-        type: "boolean"
-      bigDecimal:
-        type: "boolean"
-      integralNumber:
-        type: "boolean"
-      pojo:
-        type: "boolean"
-      double:
-        type: "boolean"
-      long:
-        type: "boolean"
-      bigInteger:
-        type: "boolean"
-      missingNode:
-        type: "boolean"
-      containerNode:
-        type: "boolean"
-      int:
-        type: "boolean"
-      textual:
-        type: "boolean"
-      valueNode:
+      floatingPointNumber:
         type: "boolean"
       short:
         type: "boolean"
+      bigDecimal:
+        type: "boolean"
       boolean:
         type: "boolean"
-      floatingPointNumber:
+      long:
+        type: "boolean"
+      integralNumber:
+        type: "boolean"
+      missingNode:
+        type: "boolean"
+      textual:
+        type: "boolean"
+      containerNode:
+        type: "boolean"
+      binary:
+        type: "boolean"
+      int:
+        type: "boolean"
+      valueNode:
+        type: "boolean"
+      bigInteger:
+        type: "boolean"
+      double:
+        type: "boolean"
+      object:
+        type: "boolean"
+      pojo:
         type: "boolean"
   LayoutDefinition:
     type: "object"
@@ -2772,37 +2772,37 @@ definitions:
         type: "boolean"
       number:
         type: "boolean"
-      object:
-        type: "boolean"
-      binary:
-        type: "boolean"
-      bigDecimal:
-        type: "boolean"
-      integralNumber:
-        type: "boolean"
-      pojo:
-        type: "boolean"
-      double:
-        type: "boolean"
-      long:
-        type: "boolean"
-      bigInteger:
-        type: "boolean"
-      missingNode:
-        type: "boolean"
-      containerNode:
-        type: "boolean"
-      int:
-        type: "boolean"
-      textual:
-        type: "boolean"
-      valueNode:
+      floatingPointNumber:
         type: "boolean"
       short:
         type: "boolean"
+      bigDecimal:
+        type: "boolean"
       boolean:
         type: "boolean"
-      floatingPointNumber:
+      long:
+        type: "boolean"
+      integralNumber:
+        type: "boolean"
+      missingNode:
+        type: "boolean"
+      textual:
+        type: "boolean"
+      containerNode:
+        type: "boolean"
+      binary:
+        type: "boolean"
+      int:
+        type: "boolean"
+      valueNode:
+        type: "boolean"
+      bigInteger:
+        type: "boolean"
+      double:
+        type: "boolean"
+      object:
+        type: "boolean"
+      pojo:
         type: "boolean"
   Option:
     type: "object"
@@ -3058,14 +3058,14 @@ definitions:
         type: "string"
       password:
         type: "string"
+      pictureSet:
+        type: "boolean"
       email:
         type: "string"
       firstName:
         type: "string"
       lastName:
         type: "string"
-      pictureSet:
-        type: "boolean"
   UserRepresentation:
     type: "object"
     properties:

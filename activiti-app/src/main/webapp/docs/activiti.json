@@ -3459,59 +3459,59 @@
         "float" : {
           "type" : "boolean"
         },
-        "number" : {
-          "type" : "boolean"
-        },
         "nodeType" : {
           "type" : "string",
           "enum" : [ "ARRAY", "BINARY", "BOOLEAN", "MISSING", "NULL", "NUMBER", "OBJECT", "POJO", "STRING" ]
         },
-        "object" : {
+        "number" : {
           "type" : "boolean"
         },
-        "binary" : {
-          "type" : "boolean"
-        },
-        "bigDecimal" : {
-          "type" : "boolean"
-        },
-        "integralNumber" : {
-          "type" : "boolean"
-        },
-        "pojo" : {
-          "type" : "boolean"
-        },
-        "double" : {
-          "type" : "boolean"
-        },
-        "long" : {
-          "type" : "boolean"
-        },
-        "bigInteger" : {
-          "type" : "boolean"
-        },
-        "missingNode" : {
-          "type" : "boolean"
-        },
-        "containerNode" : {
-          "type" : "boolean"
-        },
-        "int" : {
-          "type" : "boolean"
-        },
-        "textual" : {
-          "type" : "boolean"
-        },
-        "valueNode" : {
+        "floatingPointNumber" : {
           "type" : "boolean"
         },
         "short" : {
           "type" : "boolean"
         },
+        "bigDecimal" : {
+          "type" : "boolean"
+        },
         "boolean" : {
           "type" : "boolean"
         },
-        "floatingPointNumber" : {
+        "long" : {
+          "type" : "boolean"
+        },
+        "integralNumber" : {
+          "type" : "boolean"
+        },
+        "missingNode" : {
+          "type" : "boolean"
+        },
+        "textual" : {
+          "type" : "boolean"
+        },
+        "containerNode" : {
+          "type" : "boolean"
+        },
+        "binary" : {
+          "type" : "boolean"
+        },
+        "int" : {
+          "type" : "boolean"
+        },
+        "valueNode" : {
+          "type" : "boolean"
+        },
+        "bigInteger" : {
+          "type" : "boolean"
+        },
+        "double" : {
+          "type" : "boolean"
+        },
+        "object" : {
+          "type" : "boolean"
+        },
+        "pojo" : {
           "type" : "boolean"
         }
       }
@@ -3601,52 +3601,52 @@
         "number" : {
           "type" : "boolean"
         },
-        "object" : {
-          "type" : "boolean"
-        },
-        "binary" : {
-          "type" : "boolean"
-        },
-        "bigDecimal" : {
-          "type" : "boolean"
-        },
-        "integralNumber" : {
-          "type" : "boolean"
-        },
-        "pojo" : {
-          "type" : "boolean"
-        },
-        "double" : {
-          "type" : "boolean"
-        },
-        "long" : {
-          "type" : "boolean"
-        },
-        "bigInteger" : {
-          "type" : "boolean"
-        },
-        "missingNode" : {
-          "type" : "boolean"
-        },
-        "containerNode" : {
-          "type" : "boolean"
-        },
-        "int" : {
-          "type" : "boolean"
-        },
-        "textual" : {
-          "type" : "boolean"
-        },
-        "valueNode" : {
+        "floatingPointNumber" : {
           "type" : "boolean"
         },
         "short" : {
           "type" : "boolean"
         },
+        "bigDecimal" : {
+          "type" : "boolean"
+        },
         "boolean" : {
           "type" : "boolean"
         },
-        "floatingPointNumber" : {
+        "long" : {
+          "type" : "boolean"
+        },
+        "integralNumber" : {
+          "type" : "boolean"
+        },
+        "missingNode" : {
+          "type" : "boolean"
+        },
+        "textual" : {
+          "type" : "boolean"
+        },
+        "containerNode" : {
+          "type" : "boolean"
+        },
+        "binary" : {
+          "type" : "boolean"
+        },
+        "int" : {
+          "type" : "boolean"
+        },
+        "valueNode" : {
+          "type" : "boolean"
+        },
+        "bigInteger" : {
+          "type" : "boolean"
+        },
+        "double" : {
+          "type" : "boolean"
+        },
+        "object" : {
+          "type" : "boolean"
+        },
+        "pojo" : {
           "type" : "boolean"
         }
       }
@@ -4031,6 +4031,9 @@
         "password" : {
           "type" : "string"
         },
+        "pictureSet" : {
+          "type" : "boolean"
+        },
         "email" : {
           "type" : "string"
         },
@@ -4039,9 +4042,6 @@
         },
         "lastName" : {
           "type" : "string"
-        },
-        "pictureSet" : {
-          "type" : "boolean"
         }
       }
     },

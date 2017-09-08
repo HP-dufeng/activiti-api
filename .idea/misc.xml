@@ -2,21 +2,6 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/activiti-app" />
-    <file type="web" url="file://$PROJECT_DIR$/activiti-app-starter" />
-  </component>
-  <component name="MavenCompilerTasksManager">
-    <option name="afterRebuildTask">
-      <set>
-        <MavenCompilerTask>
-          <option name="goal" value="clean" />
-          <option name="projectPath" value="$PROJECT_DIR$/activiti-app/pom.xml" />
-        </MavenCompilerTask>
-        <MavenCompilerTask>
-          <option name="goal" value="org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run" />
-          <option name="projectPath" value="$PROJECT_DIR$/activiti-app/pom.xml" />
-        </MavenCompilerTask>
-      </set>
-    </option>
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -26,7 +11,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/activiti-app-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/activiti-app-oauth/pom.xml" />
       </set>
     </option>
   </component>

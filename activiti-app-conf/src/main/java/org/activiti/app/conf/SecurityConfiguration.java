@@ -17,23 +17,22 @@ import javax.inject.Inject;
 import org.activiti.app.security.AjaxAuthenticationFailureHandler;
 import org.activiti.app.security.AjaxAuthenticationSuccessHandler;
 import org.activiti.app.security.AjaxLogoutSuccessHandler;
-import org.activiti.app.security.CustomDaoAuthenticationProvider;
-import org.activiti.app.security.CustomPersistentRememberMeServices;
+//import org.activiti.app.security.CustomPersistentRememberMeServices;
 import org.activiti.app.security.Http401UnauthorizedEntryPoint;
+import org.activiti.app.security.jwt.JwtAuthFilter;
+import org.activiti.app.security.jwt.JwtAuthenticationProvider;
+import org.activiti.app.security.jwt.JwtUserDetailsService;
+import org.activiti.app.security.jwt.TokenVerifyService;
 import org.activiti.app.web.CORSFilter;
 import org.activiti.app.web.CustomFormLoginConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Condition;
-import org.springframework.context.annotation.ConditionContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.core.env.Environment;
-import org.springframework.core.type.AnnotatedTypeMetadata;
 import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.RememberMeAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -41,10 +40,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.access.channel.ChannelProcessingFilter;
-import org.springframework.security.web.authentication.RememberMeServices;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.header.writers.XXssProtectionHeaderWriter;
 
 /**
@@ -80,8 +77,8 @@ public class SecurityConfiguration {
 	}
 
 	@Bean
-	public UserDetailsService userDetailsService() {
-		org.activiti.app.security.UserDetailsService userDetailsService = new org.activiti.app.security.UserDetailsService();
+	public TokenVerifyService userDetailsService() {
+		JwtUserDetailsService userDetailsService = new JwtUserDetailsService();
 
 		// Undocumented setting to configure the amount of time user data is cached before a new check for validity is made
 		// Use <= 0 for always do a check
@@ -90,17 +87,16 @@ public class SecurityConfiguration {
 		return userDetailsService;
 	}
 
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return NoOpPasswordEncoder.getInstance();
-	}
 	
 	@Bean(name = "dbAuthenticationProvider")
 	public AuthenticationProvider dbAuthenticationProvider() {
-		CustomDaoAuthenticationProvider daoAuthenticationProvider = new CustomDaoAuthenticationProvider();
+
+
+		JwtAuthenticationProvider daoAuthenticationProvider = new JwtAuthenticationProvider();
 		daoAuthenticationProvider.setUserDetailsService(userDetailsService());
-		daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
+
 		return daoAuthenticationProvider;
+
 	}
 	
 	//
@@ -112,7 +108,7 @@ public class SecurityConfiguration {
     public static class FormLoginWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
 
 		private static final Logger logger = LoggerFactory.getLogger(FormLoginWebSecurityConfigurerAdapter.class);
-		
+
 	    @Inject
 	    private Environment env;
 
@@ -124,22 +120,23 @@ public class SecurityConfiguration {
 
 	    @Inject
 	    private AjaxLogoutSuccessHandler ajaxLogoutSuccessHandler;
-	    
+
 	    @Inject
 	    private Http401UnauthorizedEntryPoint authenticationEntryPoint;
-	    
+
 	    @Override
 	    protected void configure(HttpSecurity http) throws Exception {
 	        http
-				.addFilterBefore(new CORSFilter(), ChannelProcessingFilter.class)
+//				.addFilterBefore(new CORSFilter(), ChannelProcessingFilter.class)
+				.addFilterBefore(new JwtAuthFilter(), BasicAuthenticationFilter.class)
 	            .exceptionHandling()
-	                .authenticationEntryPoint(authenticationEntryPoint) 
+	                .authenticationEntryPoint(authenticationEntryPoint)
 	                .and()
 	            .sessionManagement()
 	                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 	                .and()
 	            .rememberMe()
-	                .rememberMeServices(rememberMeServices())
+//	                .rememberMeServices(rememberMeServices())
 	                .key(env.getProperty("security.rememberme.key"))
 	                .and()
 	            .logout()
@@ -173,20 +170,24 @@ public class SecurityConfiguration {
 	            .usernameParameter("j_username")
 	            .passwordParameter("j_password")
 	            .permitAll();
-	        
+
 	        http.apply(loginConfig);
 	    }
 
-	    @Bean
-	    public RememberMeServices rememberMeServices() {
-	      return new CustomPersistentRememberMeServices(env, userDetailsService());
-	    }
-	    
-	    @Bean
-	    public RememberMeAuthenticationProvider rememberMeAuthenticationProvider() {
-	        return new RememberMeAuthenticationProvider(env.getProperty("security.rememberme.key"));
-	    }
+//	    @Bean
+//	    public RememberMeServices rememberMeServices() {
+//	      return new CustomPersistentRememberMeServices(env, userDetailsService());
+//	    }
+//
+//	    @Bean
+//	    public RememberMeAuthenticationProvider rememberMeAuthenticationProvider() {
+//	        return new RememberMeAuthenticationProvider(env.getProperty("security.rememberme.key"));
+//	    }
+
+
+
 	}
+
 
 	//
 	// BASIC AUTH
@@ -211,13 +212,16 @@ public class SecurityConfiguration {
 		}
 	}
 
-	public static class LdapAuthenticationEnabledCondition implements Condition {
 
-		@Override
-		public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-			return context.getEnvironment().getProperty(KEY_LDAP_ENABLED, Boolean.class, false);
-		}
 
-	}
+
+//	public static class LdapAuthenticationEnabledCondition implements Condition {
+//
+//		@Override
+//		public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
+//			return context.getEnvironment().getProperty(KEY_LDAP_ENABLED, Boolean.class, false);
+//		}
+//
+//	}
 
 }

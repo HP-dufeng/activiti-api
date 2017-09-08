@@ -117,5 +117,9 @@
     <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-all:2.3.5" level="project" />
     <orderEntry type="library" name="Maven: io.swagger:swagger-annotations:1.5.10" level="project" />
     <orderEntry type="library" name="Maven: io.swagger:swagger-models:1.5.10" level="project" />
+    <orderEntry type="library" name="Maven: org.activiti:activiti-app-oauth:6.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security.oauth:spring-security-oauth2:2.2.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" level="project" />
   </component>
 </module>

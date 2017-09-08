@@ -23,12 +23,15 @@ import io.swagger.annotations.ApiResponses;
 import io.swagger.annotations.Authorization;
 import org.activiti.app.model.idm.GroupRepresentation;
 import org.activiti.app.model.idm.UserRepresentation;
+
+
 import org.activiti.app.security.SecurityUtils;
 import org.activiti.app.service.exception.UnauthorizedException;
 import org.activiti.engine.IdentityService;
 import org.activiti.engine.identity.Group;
 import org.activiti.engine.identity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -62,10 +65,14 @@ public class AccountResource {
   @RequestMapping(value = "/rest/authenticate", method = RequestMethod.GET, produces = {"application/json"})
   public ObjectNode isAuthenticated(HttpServletRequest request) {
     String user = request.getRemoteUser();
-    
-    if(user == null) {
-        throw new UnauthorizedException("Request did not contain valid authorization");
-    }
+
+//    JwtAuthenticatedProfile authentication = (JwtAuthenticatedProfile) SecurityContextHolder.getContext().getAuthentication();
+//    WUCCUser currentUser = (WUCCUser)authentication.getPrincipal();
+//    String user = currentUser.getName();
+//
+//    if(user == null) {
+//        throw new UnauthorizedException("Request did not contain valid authorization");
+//    }
     
     ObjectNode result = objectMapper.createObjectNode();
     result.put("login", user);

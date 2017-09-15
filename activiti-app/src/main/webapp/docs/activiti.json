@@ -10,7 +10,7 @@
     }
   },
   "host" : "localhost:9999",
-  "basePath" : "/activiti-app/app/rest",
+  "basePath" : "/activiti-api/app/rest",
   "tags" : [ {
     "name" : "editor - appDefinition"
   }, {
@@ -3459,41 +3459,43 @@
         "float" : {
           "type" : "boolean"
         },
-        "nodeType" : {
-          "type" : "string",
-          "enum" : [ "ARRAY", "BINARY", "BOOLEAN", "MISSING", "NULL", "NUMBER", "OBJECT", "POJO", "STRING" ]
-        },
-        "number" : {
+        "binary" : {
           "type" : "boolean"
         },
-        "floatingPointNumber" : {
-          "type" : "boolean"
-        },
-        "short" : {
+        "object" : {
           "type" : "boolean"
         },
         "bigDecimal" : {
           "type" : "boolean"
         },
+        "textual" : {
+          "type" : "boolean"
+        },
         "boolean" : {
-          "type" : "boolean"
-        },
-        "long" : {
-          "type" : "boolean"
-        },
-        "integralNumber" : {
           "type" : "boolean"
         },
         "missingNode" : {
           "type" : "boolean"
         },
-        "textual" : {
+        "pojo" : {
+          "type" : "boolean"
+        },
+        "bigInteger" : {
+          "type" : "boolean"
+        },
+        "integralNumber" : {
+          "type" : "boolean"
+        },
+        "long" : {
+          "type" : "boolean"
+        },
+        "double" : {
           "type" : "boolean"
         },
         "containerNode" : {
           "type" : "boolean"
         },
-        "binary" : {
+        "short" : {
           "type" : "boolean"
         },
         "int" : {
@@ -3502,16 +3504,14 @@
         "valueNode" : {
           "type" : "boolean"
         },
-        "bigInteger" : {
+        "number" : {
           "type" : "boolean"
         },
-        "double" : {
-          "type" : "boolean"
+        "nodeType" : {
+          "type" : "string",
+          "enum" : [ "ARRAY", "BINARY", "BOOLEAN", "MISSING", "NULL", "NUMBER", "OBJECT", "POJO", "STRING" ]
         },
-        "object" : {
-          "type" : "boolean"
-        },
-        "pojo" : {
+        "floatingPointNumber" : {
           "type" : "boolean"
         }
       }
@@ -3598,37 +3598,43 @@
         "float" : {
           "type" : "boolean"
         },
-        "number" : {
+        "binary" : {
           "type" : "boolean"
         },
-        "floatingPointNumber" : {
-          "type" : "boolean"
-        },
-        "short" : {
+        "object" : {
           "type" : "boolean"
         },
         "bigDecimal" : {
           "type" : "boolean"
         },
+        "textual" : {
+          "type" : "boolean"
+        },
         "boolean" : {
-          "type" : "boolean"
-        },
-        "long" : {
-          "type" : "boolean"
-        },
-        "integralNumber" : {
           "type" : "boolean"
         },
         "missingNode" : {
           "type" : "boolean"
         },
-        "textual" : {
+        "pojo" : {
+          "type" : "boolean"
+        },
+        "bigInteger" : {
+          "type" : "boolean"
+        },
+        "integralNumber" : {
+          "type" : "boolean"
+        },
+        "long" : {
+          "type" : "boolean"
+        },
+        "double" : {
           "type" : "boolean"
         },
         "containerNode" : {
           "type" : "boolean"
         },
-        "binary" : {
+        "short" : {
           "type" : "boolean"
         },
         "int" : {
@@ -3637,16 +3643,10 @@
         "valueNode" : {
           "type" : "boolean"
         },
-        "bigInteger" : {
+        "number" : {
           "type" : "boolean"
         },
-        "double" : {
-          "type" : "boolean"
-        },
-        "object" : {
-          "type" : "boolean"
-        },
-        "pojo" : {
+        "floatingPointNumber" : {
           "type" : "boolean"
         }
       }
@@ -3950,10 +3950,10 @@
             "$ref" : "#/definitions/UserRepresentation"
           }
         },
-        "memberOfCandidateUsers" : {
+        "memberOfCandidateGroup" : {
           "type" : "boolean"
         },
-        "memberOfCandidateGroup" : {
+        "memberOfCandidateUsers" : {
           "type" : "boolean"
         }
       }
@@ -4031,9 +4031,6 @@
         "password" : {
           "type" : "string"
         },
-        "pictureSet" : {
-          "type" : "boolean"
-        },
         "email" : {
           "type" : "string"
         },
@@ -4042,6 +4039,9 @@
         },
         "lastName" : {
           "type" : "string"
+        },
+        "pictureSet" : {
+          "type" : "boolean"
         }
       }
     },

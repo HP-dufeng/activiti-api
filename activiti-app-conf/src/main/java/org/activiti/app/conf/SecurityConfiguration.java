@@ -32,6 +32,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -153,6 +154,7 @@ public class SecurityConfiguration {
 	                	.addHeaderWriter(new XXssProtectionHeaderWriter())
 	                .and()
 	            .authorizeRequests()
+					.antMatchers(HttpMethod.OPTIONS, "**").permitAll()//allow CORS option calls
 	                .antMatchers("/*").permitAll()
 	                .antMatchers("/app/rest/authenticate").permitAll()
 	                .antMatchers("/app/rest/integration/login").permitAll()
@@ -160,18 +162,20 @@ public class SecurityConfiguration {
 	                .antMatchers("/app/rest/idm/email-actions/*").permitAll()
 	                .antMatchers("/app/rest/idm/signups").permitAll()
 	                .antMatchers("/app/rest/idm/passwords").permitAll()
+					.regexMatchers("^/app/rest/models/(.*)/(thumbnail)(.*)").permitAll()
+					.regexMatchers("^/app/rest/models/(.*)/(bpmn20)(.*)").permitAll()
 	                .antMatchers("/app/**").authenticated();
 
 	        // Custom login form configurer to allow for non-standard HTTP-methods (eg. LOCK)
-	        CustomFormLoginConfig<HttpSecurity> loginConfig = new CustomFormLoginConfig<HttpSecurity>();
-	        loginConfig.loginProcessingUrl("/app/authentication")
-	            .successHandler(ajaxAuthenticationSuccessHandler)
-	            .failureHandler(ajaxAuthenticationFailureHandler)
-	            .usernameParameter("j_username")
-	            .passwordParameter("j_password")
-	            .permitAll();
+//	        CustomFormLoginConfig<HttpSecurity> loginConfig = new CustomFormLoginConfig<HttpSecurity>();
+//	        loginConfig.loginProcessingUrl("/app/authentication")
+//	            .successHandler(ajaxAuthenticationSuccessHandler)
+//	            .failureHandler(ajaxAuthenticationFailureHandler)
+//	            .usernameParameter("j_username")
+//	            .passwordParameter("j_password")
+//	            .permitAll();
 
-	        http.apply(loginConfig);
+//	        http.apply(loginConfig);
 	    }
 
 //	    @Bean
@@ -211,6 +215,7 @@ public class SecurityConfiguration {
 					.and().httpBasic();
 		}
 	}
+
 
 
 

@@ -91,7 +91,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <path>/activiti-app</path>
+                    <path>/activiti-api</path>
                     <port>9999</port>
                     <protocol>org.apache.coyote.http11.Http11NioProtocol</protocol>
                     <systemProperties>
@@ -127,7 +127,7 @@
                                 <scheme>https</scheme>
                             </schemes>
                             <host>localhost:9999</host>
-                            <basePath>/activiti-app/app/rest</basePath>
+                            <basePath>/activiti-api/app/rest</basePath>
                             <info>
                                 <title>Activiti App REST API</title>
                                 <version>v1</version>

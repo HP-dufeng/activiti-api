@@ -27,9 +27,10 @@ public class CORSFilter extends OncePerRequestFilter {
     public void doFilterInternal(HttpServletRequest request, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
         HttpServletResponse response = (HttpServletResponse) res;
         response.addHeader("Access-Control-Allow-Credentials", "true");
-        response.addHeader("Access-Control-Allow-Methods", "*");
+        response.addHeader("Access-Control-Allow-Methods", "GET, HEAD, POST, PUT, DELETE, TRACE, OPTIONS, PATCH");
         response.addHeader("Access-Control-Allow-Origin","*");
-        response.addHeader("Access-Control-Allow-Headers", "Content-Type");
+//        response.addHeader("Access-Control-Allow-Headers", "*");
+        response.setHeader("Access-Control-Allow-Headers", request.getHeader("Access-Control-Request-Headers"));
         chain.doFilter(request, response);
     }
 

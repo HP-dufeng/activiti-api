@@ -2,36 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaade04f-fea2-4bd5-84cc-79cabcea895c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_7_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_activiti_activiti_app_oauth_6_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_oauth_spring_security_oauth2_2_2_0_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthenticationException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthenticationProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthenticationToken.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtUserDetailsService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/TokenVerifyService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/activiti-app-logic/src/main/java/org/activiti/app/security/WUCCUser.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/activiti_app_starter_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/activiti_app_starter_war_exploded.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/activiti_app_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/activiti_app_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app-conf/activiti-app-conf.iml" afterPath="$PROJECT_DIR$/activiti-app-conf/activiti-app-conf.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app-conf/pom.xml" afterPath="$PROJECT_DIR$/activiti-app-conf/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/SecurityConfiguration.java" afterPath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/SecurityConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/CustomPersistentRememberMeServices.java" afterPath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/CustomPersistentRememberMeServices.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/UserDetailsService.java" afterPath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/UserDetailsService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app-rest/activiti-app-rest.iml" afterPath="$PROJECT_DIR$/activiti-app-rest/activiti-app-rest.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app-rest/pom.xml" afterPath="$PROJECT_DIR$/activiti-app-rest/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/idm/AccountResource.java" afterPath="$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/idm/AccountResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app/activiti-app.iml" afterPath="$PROJECT_DIR$/activiti-app/activiti-app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthFilter.java" afterPath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthenticationProvider.java" afterPath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthenticationProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtUserDetailsService.java" afterPath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtUserDetailsService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/web/CORSFilter.java" afterPath="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/web/CORSFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app/pom.xml" afterPath="$PROJECT_DIR$/activiti-app/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app/src/main/resources/META-INF/activiti-app/activiti-app.properties" afterPath="$PROJECT_DIR$/activiti-app/src/main/resources/META-INF/activiti-app/activiti-app.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app/src/main/webapp/docs/activiti.json" afterPath="$PROJECT_DIR$/activiti-app/src/main/webapp/docs/activiti.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activiti-app/src/main/webapp/docs/activiti.yaml" afterPath="$PROJECT_DIR$/activiti-app/src/main/webapp/docs/activiti.yaml" />
@@ -53,13 +30,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="FrameworkServlet.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.6.RELEASE/spring-webmvc-4.1.6.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="JwtUserDetailsService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtUserDetailsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="418" column="52" lean-forward="false" selection-start-line="418" selection-start-column="34" selection-end-line="418" selection-end-column="52" />
-              <folding />
+            <state relative-caret-position="860">
+              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,18 +46,80 @@
       <file leaf-file-name="CORSFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/web/CORSFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="55" />
+            <state relative-caret-position="320">
+              <caret line="29" column="114" lean-forward="false" selection-start-line="29" selection-start-column="114" selection-end-line="29" selection-end-column="114" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JwtAuthFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthFilter.java">
+      <file leaf-file-name="ModelsResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/ModelsResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="1080">
+              <caret line="65" column="53" lean-forward="false" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activiti-app-logic/src/main/java/org/activiti/app/domain/editor/Model.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activiti-app-logic/src/main/java/org/activiti/app/repository/editor/ModelRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="32" column="33" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activiti-app-logic/src/main/java/org/activiti/app/service/editor/ModelServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="860">
+              <caret line="102" column="23" lean-forward="false" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StencilSetResource.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/StencilSetResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="48" column="3" lean-forward="true" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelBpmnResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/ModelBpmnResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecurityConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/SecurityConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2460">
+              <caret line="165" column="35" lean-forward="false" selection-start-line="165" selection-start-column="35" selection-end-line="165" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -87,79 +128,9 @@
       <file leaf-file-name="JwtAuthenticationProvider.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthenticationProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
+            <state relative-caret-position="220">
               <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JwtUserDetailsService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtUserDetailsService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3079#3097#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppDefinitionsResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/runtime/AppDefinitionsResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding>
-                <element signature="e#2277#2278#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InvocableHandlerMethod.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.1.6.RELEASE/spring-web-4.1.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServletInvocableHandlerMethod.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.6.RELEASE/spring-webmvc-4.1.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequestMappingHandlerAdapter.class" pinned="false" current-in-tab="true">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.6.RELEASE/spring-webmvc-4.1.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="479" column="13" lean-forward="true" selection-start-line="479" selection-start-column="13" selection-end-line="479" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractAppDefinitionsResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/runtime/AbstractAppDefinitionsResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-              <folding>
-                <element signature="e#2011#2040#0" expanded="true" />
-                <element signature="e#2368#2388#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -192,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/activiti-app/pom.xml" />
         <option value="$PROJECT_DIR$/activiti-app-conf/pom.xml" />
         <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtUtil.java" />
         <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthenticationFilter.java" />
@@ -206,18 +176,20 @@
         <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/Jwt/JwtAuthenticationProvider.java" />
         <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/Jwt/JwtAuthenticationException.java" />
         <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/Jwt/JwtUserDetailsService.java" />
-        <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthFilter.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/activiti-app/src/main/resources/META-INF/activiti-app/activiti-app.properties" />
         <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/CustomPersistentRememberMeServices.java" />
         <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/ApplicationConfiguration.java" />
         <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/TokenVerifyService.java" />
         <option value="$PROJECT_DIR$/activiti-app-logic/src/main/java/org/activiti/app/security/WUCCUser.java" />
         <option value="$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/idm/AccountResource.java" />
-        <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthenticationProvider.java" />
         <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/UserDetailsService.java" />
+        <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthenticationProvider.java" />
+        <option value="$PROJECT_DIR$/activiti-app/pom.xml" />
+        <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthFilter.java" />
+        <option value="$PROJECT_DIR$/activiti-app/src/main/resources/META-INF/activiti-app/activiti-app.properties" />
         <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtUserDetailsService.java" />
         <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/SecurityConfiguration.java" />
+        <option value="$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/web/CORSFilter.java" />
       </list>
     </option>
   </component>
@@ -246,13 +218,31 @@
           <item name="Activiti UI App Root" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="activiti-app" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="activiti-app" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="activiti-app-conf" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="activiti-app-conf" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="297" />
-    <option name="y" value="41" />
+    <option name="x" value="112" />
+    <option name="y" value="50" />
     <option name="width" value="1603" />
     <option name="height" value="964" />
   </component>
@@ -272,7 +262,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -304,199 +293,15 @@
               <item name="activiti-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-conf" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-conf" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-conf" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-conf" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-conf" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-conf" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-conf" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-              <item name="jwt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-conf" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-logic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-logic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-logic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-logic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-logic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-rest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="activiti-ui-root" type="b2602c69:ProjectViewProjectNode" />
-              <item name="activiti-api" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti-app-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
-              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -504,7 +309,7 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="ignore_missing_gitignore" value="true" />
   </component>
   <component name="RunDashboard">
@@ -641,44 +446,48 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504688349759</updated>
-      <workItem from="1504688353400" duration="44983000" />
+      <workItem from="1504688353400" duration="45515000" />
+      <workItem from="1505089028829" duration="1896000" />
+      <workItem from="1505092875367" duration="9670000" />
+      <workItem from="1505175550439" duration="32442000" />
+      <workItem from="1505357847192" duration="2001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44983000" />
+    <option name="totallyTimeSpent" value="91524000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17750533" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20682302" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20149253" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39934713" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38084874" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -692,27 +501,21 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/SecurityConfiguration.java</url>
-          <line>178</line>
+          <line>182</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/SecurityConfiguration.java</url>
-          <line>183</line>
+          <line>187</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/SecurityConfiguration.java</url>
-          <line>74</line>
+          <line>75</line>
           <properties />
           <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthenticationProvider.java</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/idm/AccountResource.java</url>
@@ -722,36 +525,30 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtUserDetailsService.java</url>
-          <line>106</line>
+          <line>107</line>
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/runtime/AppDefinitionsResource.java</url>
-          <line>52</line>
+          <url>file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/ModelsResource.java</url>
+          <line>98</line>
           <properties />
-          <option name="timeStamp" value="28" />
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthFilter.java</url>
-          <line>22</line>
+          <url>file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/ModelBpmnResource.java</url>
+          <line>40</line>
           <properties />
-          <option name="timeStamp" value="29" />
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthenticationProvider.java</url>
-          <line>22</line>
+          <url>file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/AbstractModelBpmnResource.java</url>
+          <line>45</line>
           <properties />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtUserDetailsService.java</url>
-          <line>56</line>
-          <properties />
-          <option name="timeStamp" value="31" />
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="32" />
+      <option name="time" value="57" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="MavenRunConfiguration">
@@ -761,107 +558,138 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/AjaxAuthenticationFailureHandler.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.6.RELEASE/spring-webmvc-4.1.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="1180">
+          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.6.RELEASE/spring-webmvc-4.1.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7660">
+          <caret line="479" column="13" lean-forward="false" selection-start-line="479" selection-start-column="13" selection-end-line="479" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-rest/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app/src/main/resources/META-INF/activiti-app/activiti-app.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="773">
-          <caret line="70" column="55" lean-forward="false" selection-start-line="70" selection-start-column="55" selection-end-line="70" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/CustomPersistentRememberMeServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="75" column="60" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/CustomRememberMeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.1.6.RELEASE/spring-context-4.1.6.RELEASE.jar!/org/springframework/context/annotation/ConfigurationClassEnhancer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.1.6.RELEASE/spring-core-4.1.6.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1015">
-          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.0.1.RELEASE/spring-security-core-4.0.1.RELEASE.jar!/org/springframework/security/authentication/AuthenticationProvider.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.0.1.RELEASE/spring-security-core-4.0.1.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="48" column="8" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/CustomUserDetailService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        <state relative-caret-position="-9329">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/Bootstrapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-405">
+        <state relative-caret-position="-359">
           <caret line="37" column="13" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/ActivitiEngineConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/ApplicationConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="100">
           <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.0.1.RELEASE/spring-security-web-4.0.1.RELEASE.jar!/org/springframework/security/web/header/HeaderWriterFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.0.1.RELEASE/spring-security-web-4.0.1.RELEASE.jar!/org/springframework/security/web/authentication/logout/LogoutFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.0.1.RELEASE/spring-security-web-4.0.1.RELEASE.jar!/org/springframework/security/web/context/request/async/WebAsyncManagerIntegrationFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.1.6.RELEASE/spring-web-4.1.6.RELEASE.jar!/org/springframework/web/filter/DelegatingFilterProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.0.1.RELEASE/spring-security-web-4.0.1.RELEASE.jar!/org/springframework/security/web/FilterChainProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.0.1.RELEASE/spring-security-web-4.0.1.RELEASE.jar!/org/springframework/security/web/context/SecurityContextPersistenceFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/idm/UserResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/UserDetailsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-52">
+          <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.1.6.RELEASE/spring-web-4.1.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.0.1.RELEASE/spring-security-core-4.0.1.RELEASE.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.0.1.RELEASE/spring-security-core-4.0.1.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="99" column="65" lean-forward="false" selection-start-line="99" selection-start-column="48" selection-end-line="99" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.0.1.RELEASE/spring-security-core-4.0.1.RELEASE.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="18" column="88" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="88" />
         </state>
       </provider>
     </entry>
@@ -869,97 +697,65 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="22" column="78" lean-forward="false" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.0.1.RELEASE/spring-security-core-4.0.1.RELEASE.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.0.1.RELEASE/spring-security-core-4.0.1.RELEASE.jar!/org/springframework/security/core/userdetails/UserDetailsService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="8" column="81" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.1.6.RELEASE/spring-web-4.1.6.RELEASE.jar!/org/springframework/web/client/RestTemplate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-363">
-          <caret line="263" column="33" lean-forward="false" selection-start-line="263" selection-start-column="33" selection-end-line="263" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.0.1.RELEASE/spring-security-core-4.0.1.RELEASE.jar!/org/springframework/security/core/authority/AuthorityUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="39" column="76" lean-forward="false" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.0.1.RELEASE/spring-security-core-4.0.1.RELEASE.jar!/org/springframework/security/authentication/ProviderManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/http/HttpServletRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="44" column="11" lean-forward="false" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/TokenVerifyService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="100">
           <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.0.1.RELEASE/spring-security-web-4.0.1.RELEASE.jar!/org/springframework/security/web/servletapi/SecurityContextHolderAwareRequestWrapper.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-engine/6.0.0/activiti-engine-6.0.0.jar!/org/activiti/engine/IdentityService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="29" column="15" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-480">
+          <caret line="93" column="39" lean-forward="false" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/http/HttpServletRequest.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
+          <caret line="34" column="11" lean-forward="false" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.0.1.RELEASE/spring-security-core-4.0.1.RELEASE.jar!/org/springframework/security/core/userdetails/UserDetails.class">
+    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/idm/AccountResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.0.1.RELEASE/spring-security-core-4.0.1.RELEASE.jar!/org/springframework/security/core/userdetails/User.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-          <folding />
+        <state relative-caret-position="342">
+          <caret line="91" column="57" lean-forward="false" selection-start-line="91" selection-start-column="41" selection-end-line="91" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthenticationToken.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding />
+        <state relative-caret-position="140">
+          <caret line="19" column="50" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/runtime/AppDefinitionsResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app/src/main/resources/META-INF/activiti-app/activiti-app.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -967,226 +763,175 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/activiti-app-logic/src/main/java/org/activiti/app/security/ActivitiAppUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-logic/src/main/java/org/activiti/app/service/api/UserCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/idm/AccountResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="492">
+          <caret line="42" column="25" lean-forward="false" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/activiti-app-logic/src/main/java/org/activiti/app/security/WUCCUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1691#1692#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="520">
+          <caret line="72" column="23" lean-forward="false" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-engine/6.0.0/activiti-engine-6.0.0.jar!/org/activiti/engine/impl/identity/Authentication.class">
+    <entry file="file://$PROJECT_DIR$/activiti-app-logic/src/main/java/org/activiti/app/security/SecurityUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/UserDetailsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="46" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-          <folding>
-            <marker date="1504777042819" expanded="false" signature="3154:3172" ph="&lt;~&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/ModelResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-520">
-          <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/ModelsResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="102" column="4" lean-forward="true" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/AppDefinitionResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1980">
-          <caret line="72" column="33" lean-forward="false" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2220">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="655">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.1.6.RELEASE/spring-web-4.1.6.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-560">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="280">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/RestApiConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/AuthoritiesConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.1.6.RELEASE/spring-aop-4.1.6.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="175" column="0" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/SecurityConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="130" column="32" lean-forward="false" selection-start-line="130" selection-start-column="17" selection-end-line="130" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6766#6780#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.6.RELEASE/spring-webmvc-4.1.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.6.RELEASE/spring-webmvc-4.1.6.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="408" column="0" lean-forward="false" selection-start-line="408" selection-start-column="0" selection-end-line="408" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.6.RELEASE/spring-webmvc-4.1.6.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="418" column="52" lean-forward="false" selection-start-line="418" selection-start-column="34" selection-end-line="418" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/web/CORSFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="55" />
-          <folding />
+        <state relative-caret-position="420">
+          <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="260">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/ModelResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4392">
+          <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-logic/src/main/java/org/activiti/app/service/api/ModelService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/AbstractModelBpmnResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/ModelBpmnResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtAuthenticationProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
+        <state relative-caret-position="220">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/security/jwt/JwtUserDetailsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="860">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3079#3097#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/runtime/AbstractAppDefinitionsResource.java">
+    <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/conf/SecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="e#2011#2040#0" expanded="true" />
-            <element signature="e#2368#2388#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/runtime/AppDefinitionsResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="e#2277#2278#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.1.6.RELEASE/spring-web-4.1.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state relative-caret-position="2460">
+          <caret line="165" column="35" lean-forward="false" selection-start-line="165" selection-start-column="35" selection-end-line="165" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.6.RELEASE/spring-webmvc-4.1.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
+    <entry file="file://$PROJECT_DIR$/activiti-app-conf/src/main/java/org/activiti/app/web/CORSFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        <state relative-caret-position="320">
+          <caret line="29" column="114" lean-forward="false" selection-start-line="29" selection-start-column="114" selection-end-line="29" selection-end-column="114" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.6.RELEASE/spring-webmvc-4.1.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/AbstractModelsResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="479" column="13" lean-forward="true" selection-start-line="479" selection-start-column="13" selection-end-line="479" selection-end-column="13" />
+        <state relative-caret-position="207">
+          <caret line="145" column="29" lean-forward="false" selection-start-line="145" selection-start-column="29" selection-end-line="145" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/ModelsResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="65" column="53" lean-forward="false" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-logic/src/main/java/org/activiti/app/domain/editor/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-logic/src/main/java/org/activiti/app/repository/editor/ModelRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="32" column="33" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-logic/src/main/java/org/activiti/app/service/editor/ModelServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="860">
+          <caret line="102" column="23" lean-forward="false" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activiti-app-rest/src/main/java/org/activiti/app/rest/editor/StencilSetResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="48" column="3" lean-forward="true" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
           <folding />
         </state>
       </provider>

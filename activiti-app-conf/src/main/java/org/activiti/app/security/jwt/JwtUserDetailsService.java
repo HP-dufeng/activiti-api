@@ -82,7 +82,8 @@ public class JwtUserDetailsService implements TokenVerifyService, CustomUserDeta
 
                 grantedAuthorities.addAll(AuthorityUtils.createAuthorityList(roles));
                 // check if user is in super user group
-                if(user.getSuperAdmin().equals("True")) {
+
+                if(user.getSuperAdmin()!=null && user.getSuperAdmin().equals("True")) {
                         grantedAuthorities.add(new SimpleGrantedAuthority(AuthoritiesConstants.ADMIN));
                 }
 

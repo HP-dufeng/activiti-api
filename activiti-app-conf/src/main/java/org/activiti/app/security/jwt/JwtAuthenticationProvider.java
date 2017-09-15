@@ -24,7 +24,7 @@ public class JwtAuthenticationProvider implements AuthenticationProvider,
             ActivitiAppUser appUser = (ActivitiAppUser)tokenVerifyService.loadUserByAccessToken(accessToken);
             WUCCUser user = (WUCCUser) appUser.getUserObject();
 
-            JwtAuthenticationToken jwtAuthenticationToken = new JwtAuthenticationToken(user.getName(),"",appUser.getAuthorities());
+            JwtAuthenticationToken jwtAuthenticationToken = new JwtAuthenticationToken(appUser,"",appUser.getAuthorities());
 
             return jwtAuthenticationToken;
         } catch (Exception e) {

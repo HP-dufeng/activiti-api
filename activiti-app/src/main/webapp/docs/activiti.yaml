@@ -11,7 +11,7 @@ info:
     name: "Activiti"
     url: "http://www.activiti.org/userguide/index.html"
 host: "localhost:9999"
-basePath: "/activiti-app/app/rest"
+basePath: "/activiti-api/app/rest"
 tags:
 - name: "editor - appDefinition"
 - name: "editor - editorDisplayJsonClient"
@@ -2658,6 +2658,38 @@ definitions:
         type: "boolean"
       float:
         type: "boolean"
+      binary:
+        type: "boolean"
+      object:
+        type: "boolean"
+      bigDecimal:
+        type: "boolean"
+      textual:
+        type: "boolean"
+      boolean:
+        type: "boolean"
+      missingNode:
+        type: "boolean"
+      pojo:
+        type: "boolean"
+      bigInteger:
+        type: "boolean"
+      integralNumber:
+        type: "boolean"
+      long:
+        type: "boolean"
+      double:
+        type: "boolean"
+      containerNode:
+        type: "boolean"
+      short:
+        type: "boolean"
+      int:
+        type: "boolean"
+      valueNode:
+        type: "boolean"
+      number:
+        type: "boolean"
       nodeType:
         type: "string"
         enum:
@@ -2670,39 +2702,7 @@ definitions:
         - "OBJECT"
         - "POJO"
         - "STRING"
-      number:
-        type: "boolean"
       floatingPointNumber:
-        type: "boolean"
-      short:
-        type: "boolean"
-      bigDecimal:
-        type: "boolean"
-      boolean:
-        type: "boolean"
-      long:
-        type: "boolean"
-      integralNumber:
-        type: "boolean"
-      missingNode:
-        type: "boolean"
-      textual:
-        type: "boolean"
-      containerNode:
-        type: "boolean"
-      binary:
-        type: "boolean"
-      int:
-        type: "boolean"
-      valueNode:
-        type: "boolean"
-      bigInteger:
-        type: "boolean"
-      double:
-        type: "boolean"
-      object:
-        type: "boolean"
-      pojo:
         type: "boolean"
   LayoutDefinition:
     type: "object"
@@ -2770,39 +2770,39 @@ definitions:
         type: "boolean"
       float:
         type: "boolean"
-      number:
+      binary:
         type: "boolean"
-      floatingPointNumber:
-        type: "boolean"
-      short:
+      object:
         type: "boolean"
       bigDecimal:
         type: "boolean"
+      textual:
+        type: "boolean"
       boolean:
-        type: "boolean"
-      long:
-        type: "boolean"
-      integralNumber:
         type: "boolean"
       missingNode:
         type: "boolean"
-      textual:
+      pojo:
+        type: "boolean"
+      bigInteger:
+        type: "boolean"
+      integralNumber:
+        type: "boolean"
+      long:
+        type: "boolean"
+      double:
         type: "boolean"
       containerNode:
         type: "boolean"
-      binary:
+      short:
         type: "boolean"
       int:
         type: "boolean"
       valueNode:
         type: "boolean"
-      bigInteger:
+      number:
         type: "boolean"
-      double:
-        type: "boolean"
-      object:
-        type: "boolean"
-      pojo:
+      floatingPointNumber:
         type: "boolean"
   Option:
     type: "object"
@@ -3005,9 +3005,9 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/UserRepresentation"
-      memberOfCandidateUsers:
-        type: "boolean"
       memberOfCandidateGroup:
+        type: "boolean"
+      memberOfCandidateUsers:
         type: "boolean"
   TaskUpdateRepresentation:
     type: "object"
@@ -3058,14 +3058,14 @@ definitions:
         type: "string"
       password:
         type: "string"
-      pictureSet:
-        type: "boolean"
       email:
         type: "string"
       firstName:
         type: "string"
       lastName:
         type: "string"
+      pictureSet:
+        type: "boolean"
   UserRepresentation:
     type: "object"
     properties:

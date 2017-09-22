@@ -78,12 +78,12 @@ public class SecurityConfiguration {
 	}
 
 	@Bean
-	public TokenVerifyService userDetailsService() {
+	public UserDetailsService userDetailsService() {
 		JwtUserDetailsService userDetailsService = new JwtUserDetailsService();
 
 		// Undocumented setting to configure the amount of time user data is cached before a new check for validity is made
 		// Use <= 0 for always do a check
-		userDetailsService.setUserValidityPeriod(env.getProperty("cache.users.recheck.period", Long.class, 30000L));
+//		userDetailsService.setUserValidityPeriod(env.getProperty("cache.users.recheck.period", Long.class, 30000L));
 
 		return userDetailsService;
 	}
@@ -94,7 +94,7 @@ public class SecurityConfiguration {
 
 
 		JwtAuthenticationProvider daoAuthenticationProvider = new JwtAuthenticationProvider();
-		daoAuthenticationProvider.setUserDetailsService(userDetailsService());
+		daoAuthenticationProvider.setUserDetailsService((TokenVerifyService) userDetailsService());
 
 		return daoAuthenticationProvider;
 

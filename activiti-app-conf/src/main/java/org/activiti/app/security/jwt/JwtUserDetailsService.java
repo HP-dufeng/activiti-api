@@ -11,6 +11,7 @@ import org.activiti.app.security.AuthoritiesConstants;
 import org.activiti.app.security.CustomUserDetailService;
 
 import org.activiti.app.security.WUCCUser;
+import org.activiti.app.security.jwt.cache.TokenCache;
 import org.activiti.app.service.api.UserCache;
 import org.activiti.app.service.api.UserCache.CachedUser;
 import org.activiti.engine.IdentityService;
@@ -38,22 +39,18 @@ import org.springframework.web.client.RestTemplate;
  * This class is called AFTER successful authentication, to populate the user object with additional details The default (no ldap) way of authentication is a bit hidden in Spring Security magic. But
  * basically, the user object is fetched from the db and the hashed password is compared with the hash of the provided password (using the Spring {@link StandardPasswordEncoder}).
  */
-public class JwtUserDetailsService implements TokenVerifyService, CustomUserDetailService {
+public class JwtUserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService, TokenVerifyService {
+
+      @Autowired
+  private UserCache userCache;
 
         @Autowired
-        private UserCache userCache;
-
+        private TokenCache tokenCache;
 
         @Autowired
         private Environment env;
 
-        private long userValidityPeriod;
-
-
-
-        @Transactional
-        public UserDetails loadUserByAccessToken(String accessToken) {
-
+        private WUCCUser verfiryToken (String accessToken){
                 String token_verify_url =  env.getProperty("token_verify_url");
 
                 RestTemplate restTemplate = new RestTemplate();
@@ -71,6 +68,28 @@ public class JwtUserDetailsService implements TokenVerifyService, CustomUserDeta
 
                 WUCCUser user = response.getBody();
 
+                return user;
+        }
+
+
+
+
+        @Transactional
+        public UserDetails loadUserByAccessToken(String accessToken) {
+
+                WUCCUser user;
+
+                TokenCache.CachedToken token = tokenCache.getToken(accessToken);
+                if(!token.isExpired()){
+                    user = token.getUser();
+                }
+                else {
+                        user = verfiryToken(accessToken);
+
+                        // Adding it manually to cache
+                        tokenCache.putToken(accessToken, new TokenCache.CachedToken(user, false));
+                }
+
                 // Add capabilities to user object
                 Collection<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
 
@@ -87,8 +106,6 @@ public class JwtUserDetailsService implements TokenVerifyService, CustomUserDeta
                         grantedAuthorities.add(new SimpleGrantedAuthority(AuthoritiesConstants.ADMIN));
                 }
 
-                // Adding it manually to cache
-                userCache.putUser(user.getId(), new CachedUser(user, grantedAuthorities));
 
                 // Set authentication globally for Activiti
                 Authentication.setAuthenticatedUserId(String.valueOf(user.getId()));
@@ -96,42 +113,38 @@ public class JwtUserDetailsService implements TokenVerifyService, CustomUserDeta
                 return new ActivitiAppUser(user, user.getId(), grantedAuthorities);
         }
 
-        @Override
-        @Transactional
-        public UserDetails loadUserByUsername(final String login) {
-                return null;
+    @Override
+    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+        WUCCUser user;
+
+        TokenCache.CachedToken token = tokenCache.getToken(userName);
+        if(!token.isExpired()){
+            user = token.getUser();
+        }
+        else {
+            throw new UsernameNotFoundException("User " + userName + " was not found or expired");
         }
 
-        @Transactional
-        public UserDetails loadByUserId(final String userId) {
+        // Add capabilities to user object
+        Collection<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
 
-                CachedUser cachedUser = userCache.getUser(userId, true, true, false); // Do not check for validity. This would lead to A LOT of db requests! For login, there is a validity period (see below)
-                if (cachedUser == null) {
-                        throw new UsernameNotFoundException("User " + userId + " was not found in the database");
-                }
+        // add default authority
+        grantedAuthorities.add(new SimpleGrantedAuthority(AuthoritiesConstants.USER));
 
-                long lastDatabaseCheck = cachedUser.getLastDatabaseCheck();
-                long currentTime = System.currentTimeMillis(); // No need to create a Date object. The Date constructor simply calls this method too!
+        String[] roles = new String[user.getRole().size()];
+        user.getRole().toArray(roles);
 
-                if (userValidityPeriod <= 0L || (currentTime - lastDatabaseCheck >= userValidityPeriod)) {
+        grantedAuthorities.addAll(AuthorityUtils.createAuthorityList(roles));
+        // check if user is in super user group
 
-                        userCache.invalidate(userId);
-                        cachedUser = userCache.getUser(userId, true, true, false); // Fetching it again will refresh data
-
-                        cachedUser.setLastDatabaseCheck(currentTime);
-                }
-
-                // The Spring security docs clearly state a new instance must be returned on every invocation
-                User user = cachedUser.getUser();
-                String actualUserId = user.getId();
-
-                // Set authentication globally for Activiti
-                Authentication.setAuthenticatedUserId(String.valueOf(user.getId()));
-
-                return new ActivitiAppUser(cachedUser.getUser(), actualUserId, cachedUser.getGrantedAuthorities());
+        if(user.getSuperAdmin()!=null && user.getSuperAdmin().equals("True")) {
+            grantedAuthorities.add(new SimpleGrantedAuthority(AuthoritiesConstants.ADMIN));
         }
 
-        public void setUserValidityPeriod(long userValidityPeriod) {
-                this.userValidityPeriod = userValidityPeriod;
-        }
+
+        // Set authentication globally for Activiti
+        Authentication.setAuthenticatedUserId(String.valueOf(user.getId()));
+
+        return new ActivitiAppUser(user, user.getId(), grantedAuthorities);
+    }
 }

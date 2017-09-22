@@ -70,12 +70,12 @@ public class WUCCUser implements User {
     private String id;
     @Override
     public String getId() {
-        return this.sub;
+        return this.name;
     }
 
     @Override
     public void setId(String s) {
-        this.id = this.sub;
+        this.id = this.name;
     }
 
     private String firstName;

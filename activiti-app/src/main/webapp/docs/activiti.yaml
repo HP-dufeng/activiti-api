@@ -2654,41 +2654,9 @@ definitions:
     properties:
       array:
         type: "boolean"
-      null:
-        type: "boolean"
       float:
         type: "boolean"
-      binary:
-        type: "boolean"
-      object:
-        type: "boolean"
-      bigDecimal:
-        type: "boolean"
-      textual:
-        type: "boolean"
-      boolean:
-        type: "boolean"
-      missingNode:
-        type: "boolean"
-      pojo:
-        type: "boolean"
-      bigInteger:
-        type: "boolean"
-      integralNumber:
-        type: "boolean"
-      long:
-        type: "boolean"
-      double:
-        type: "boolean"
-      containerNode:
-        type: "boolean"
-      short:
-        type: "boolean"
-      int:
-        type: "boolean"
-      valueNode:
-        type: "boolean"
-      number:
+      null:
         type: "boolean"
       nodeType:
         type: "string"
@@ -2702,7 +2670,39 @@ definitions:
         - "OBJECT"
         - "POJO"
         - "STRING"
+      number:
+        type: "boolean"
       floatingPointNumber:
+        type: "boolean"
+      containerNode:
+        type: "boolean"
+      pojo:
+        type: "boolean"
+      integralNumber:
+        type: "boolean"
+      int:
+        type: "boolean"
+      double:
+        type: "boolean"
+      object:
+        type: "boolean"
+      long:
+        type: "boolean"
+      boolean:
+        type: "boolean"
+      bigDecimal:
+        type: "boolean"
+      valueNode:
+        type: "boolean"
+      short:
+        type: "boolean"
+      bigInteger:
+        type: "boolean"
+      missingNode:
+        type: "boolean"
+      textual:
+        type: "boolean"
+      binary:
         type: "boolean"
   LayoutDefinition:
     type: "object"
@@ -2766,43 +2766,43 @@ definitions:
         - "STRING"
       array:
         type: "boolean"
-      null:
-        type: "boolean"
       float:
         type: "boolean"
-      binary:
-        type: "boolean"
-      object:
-        type: "boolean"
-      bigDecimal:
-        type: "boolean"
-      textual:
-        type: "boolean"
-      boolean:
-        type: "boolean"
-      missingNode:
-        type: "boolean"
-      pojo:
-        type: "boolean"
-      bigInteger:
-        type: "boolean"
-      integralNumber:
-        type: "boolean"
-      long:
-        type: "boolean"
-      double:
-        type: "boolean"
-      containerNode:
-        type: "boolean"
-      short:
-        type: "boolean"
-      int:
-        type: "boolean"
-      valueNode:
+      null:
         type: "boolean"
       number:
         type: "boolean"
       floatingPointNumber:
+        type: "boolean"
+      containerNode:
+        type: "boolean"
+      pojo:
+        type: "boolean"
+      integralNumber:
+        type: "boolean"
+      int:
+        type: "boolean"
+      double:
+        type: "boolean"
+      object:
+        type: "boolean"
+      long:
+        type: "boolean"
+      boolean:
+        type: "boolean"
+      bigDecimal:
+        type: "boolean"
+      valueNode:
+        type: "boolean"
+      short:
+        type: "boolean"
+      bigInteger:
+        type: "boolean"
+      missingNode:
+        type: "boolean"
+      textual:
+        type: "boolean"
+      binary:
         type: "boolean"
   Option:
     type: "object"
